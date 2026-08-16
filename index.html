@@ -5,48 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Andreitaap Ventas ☁️💗</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  body { font-family: 'Poppins', sans-serif; background: #FFF0F6 url('https://www.transparenttextures.com/patterns/pink-dust.png'); margin: 0; color: #4A4A4A; }
-  header { background: linear-gradient(135deg, #FFB6E6, #D8B4F8); padding: 20px; text-align: center; border-bottom: 5px dotted white; }
-
- .logos { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
- .logo-side { width: 70px; height: 70px; border-radius: 50%; border: 3px solid white; background: white; object-fit: cover; }
- .logo-main { width: 110px; height: 110px; border-radius: 50%; border: 5px solid white; background: white; object-fit: cover; box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
-
-  h1 { color: white; text-shadow: 2px 2px 4px #FF4D6D; margin: 10px 0 5px 0; font-size: 22px; }
- .user { color: white; font-weight: 600; display: flex; justify-content: center; gap: 10px; align-items: center; }
- .ig-btn { background: white; color: #FF4D6D; padding: 5px 12px; border-radius: 15px; text-decoration: none; font-weight: 700; font-size: 12px; }
-
- .currency-selector { text-align: center; background: white; padding: 12px; border-bottom: 2px solid #FFB6E6; }
- .currency-selector b { color: #FF4D6D; }
- .currency-selector button { background: #F8F0FF; border: 2px solid #D8B4F8; padding: 8px 15px; border-radius: 15px; cursor: pointer; font-weight: 600; margin: 5px; }
- .currency-selector button.active { background: #FFB6E6; color: white; border-color: #FF4D6D; }
-
- .tabs { display: flex; overflow-x: auto; background: white; padding: 10px; gap: 8px; border-bottom: 3px solid #FFB6E6; }
- .tab { padding: 10px 12px; border-radius: 20px; background: #F8F0FF; border: 2px solid #D8B4F8; cursor: pointer; white-space: nowrap; font-weight: 600; font-size: 13px; }
- .tab.active { background: #FFB6E6; color: white; border-color: #FF4D6D; }
-
- .content { display: none; padding: 20px; }
- .content.active { display: block; }
-
- .producto { background: white; padding: 15px; border-radius: 20px; margin: 12px 0; box-shadow: 0 4px 10px rgba(255,182,230,0.3); border: 2px solid #FFB6E6; }
- .producto b { color: #FF4D6D; font-size: 15px; }
- .precio { font-size: 14px; margin: 5px 0; font-weight: 600; }
- .precio .cop, .precio .mxn { display: none; } /* ARREGLADO */
- .precio .mxn.show, .precio .cop.show { display: inline; } /* ARREGLADO */
- .producto button { background: #FF4D6D; color: white; border: none; padding: 8px 15px; border-radius: 15px; cursor: pointer; font-weight: 600; margin-top: 8px; }
- .nota { font-size: 12px; text-align: center; color: #888; margin: 10px 0; font-style: italic; background: #FFF3B0; padding: 8px; border-radius: 10px; }
-  h4 { text-align: center; color:#FF4D6D; }
-
- .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 10; }
- .modal-content { background: white; padding: 20px; border-radius: 25px; width: 90%; max-width: 400px; border: 4px solid #FFB6E6; }
- .close { float: right; font-size: 25px; cursor: pointer; color: #FF4D6D; }
-
- .cart-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 15px; border-radius: 50%; font-size: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.2); cursor: pointer; border: 3px solid white; z-index: 9; }
- .cart { display: none; position: fixed; bottom: 80px; right: 20px; width: 320px; max-height: 400px; overflow-y: auto; background: white; border-radius: 20px; padding: 15px; border: 3px solid #FFB6E6; z-index: 9; }
- .cart button { width: 100%; background: #FF4D6D; color: white; border: none; padding: 12px; border-radius: 15px; font-weight: 700; cursor: pointer; margin-top: 10px; }
-  footer { text-align: center; padding: 20px; color: #FF4D6D; font-size: 14px; background: white; border-top: 3px dotted #FFB6E6; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
@@ -66,6 +25,7 @@
   <b>Elige tu moneda:</b><br>
   <button onclick="setCurrency('mxn')" id="btn-mxn" class="active">🇲🇽 Pesos MX</button>
   <button onclick="setCurrency('cop')" id="btn-cop">🇨🇴 Pesos CO</button>
+  <button onclick="setCurrency('pen')" id="btn-pen">🇵🇪 Soles PE</button>
 </div>
 
 <div class="tabs">
@@ -80,79 +40,84 @@
   <div class="tab" onclick="showTab('documentos')">📂 Documentos</div>
 </div>
 
+<!-- 1. CALIGRAFICO SIMPLE -->
 <div id="cali-simple" class="content active">
-  <div class="producto"><b>1 por</b><div class="precio"><span class="mxn show">$40 MXN</span><span class="cop">$8,500 COP</span></div><button onclick="openModal('Caligráfico Simple 1', '$40 MXN', '$8,500 COP')">Añadir</button></div>
-  <div class="producto"><b>3 por</b><div class="precio"><span class="mxn show">$100 MXN</span><span class="cop">$25,000 COP</span></div><button onclick="openModal('Caligráfico Simple 3', '$100 MXN', '$25,000 COP')">Añadir</button></div>
-  <div class="producto"><b>5 por</b><div class="precio"><span class="mxn show">$180 MXN</span><span class="cop">$34,500 COP</span></div><button onclick="openModal('Caligráfico Simple 5', '$180 MXN', '$34,500 COP')">Añadir</button></div>
+  <div class="producto"><b>1 por</b><div class="precio"><span class="mxn show">$40 🇲🇽</span><span class="cop">$8.500 🇨🇴</span><span class="pen">S/7.00 🇵🇪</span></div><button onclick="openModal('Caligráfico Simple 1', '$40 🇲🇽', '$8.500 🇨🇴', 'S/7.00 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>3 por</b><div class="precio"><span class="mxn show">$100 🇲🇽</span><span class="cop">$25.000 🇨🇴</span><span class="pen">S/19.00 🇵🇪</span></div><button onclick="openModal('Caligráfico Simple 3', '$100 🇲🇽', '$25.000 🇨🇴', 'S/19.00 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>5 por</b><div class="precio"><span class="mxn show">$180 🇲🇽</span><span class="cop">$34.500 🇨🇴</span><span class="pen">S/32.00 🇵🇪</span></div><button onclick="openModal('Caligráfico Simple 5', '$180 🇲🇽', '$34.500 🇨🇴', 'S/32.00 🇵🇪')">Añadir</button></div>
 </div>
 
+<!-- 2. CALIGRAFICO + OBJETO -->
 <div id="cali-objeto" class="content">
-  <div class="producto"><b>1 por</b><div class="precio"><span class="mxn show">$55 MXN</span><span class="cop">$11,500 COP</span></div><button onclick="openModal('Caligráfico + Objeto 1', '$55 MXN', '$11,500 COP')">Añadir</button></div>
-  <div class="producto"><b>3 por</b><div class="precio"><span class="mxn show">$140 MXN</span><span class="cop">$26,500 COP</span></div><button onclick="openModal('Caligráfico + Objeto 3', '$140 MXN', '$26,500 COP')">Añadir</button></div>
-  <div class="producto"><b>5 por</b><div class="precio"><span class="mxn show">$250 MXN</span><span class="cop">$47,500 COP</span></div><button onclick="openModal('Caligráfico + Objeto 5', '$250 MXN', '$47,500 COP')">Añadir</button></div>
+  <div class="producto"><b>1 por</b><div class="precio"><span class="mxn show">$55 🇲🇽</span><span class="cop">$11.500 🇨🇴</span><span class="pen">S/10.00 🇵🇪</span></div><button onclick="openModal('Caligráfico + Objeto 1', '$55 🇲🇽', '$11.500 🇨🇴', 'S/10.00 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>3 por</b><div class="precio"><span class="mxn show">$140 🇲🇽</span><span class="cop">$26.500 🇨🇴</span><span class="pen">S/28.00 🇵🇪</span></div><button onclick="openModal('Caligráfico + Objeto 3', '$140 🇲🇽', '$26.500 🇨🇴', 'S/28.00 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>5 por</b><div class="precio"><span class="mxn show">$250 🇲🇽</span><span class="cop">$47.500 🇨🇴</span><span class="pen">S/47.00 🇵🇪</span></div><button onclick="openModal('Caligráfico + Objeto 5', '$250 🇲🇽', '$47.500 🇨🇴', 'S/47.00 🇵🇪')">Añadir</button></div>
 </div>
 
+<!-- 3. RECARGAS ID -->
 <div id="recargas-id" class="content">
   <p class="nota">*_PRIMERO SE REVISA EL ID PARA VER SI CUENTA CON PROMOCIÓN_*</p>
-  <div class="producto"><b>110 Diamantes</b><div class="precio"><span class="mxn show">$15 MXN</span><span class="cop">$15 MXN</span></div><button onclick="openModal('110 Diamantes ID', '$15 MXN', '$15 MXN')">Añadir</button></div>
-  <div class="producto"><b>341 Diamantes</b><div class="precio"><span class="mxn show">$45 MXN</span><span class="cop">$45 MXN</span></div><button onclick="openModal('341 Diamantes ID', '$45 MXN', '$45 MXN')">Añadir</button></div>
-  <div class="producto"><b>572 Diamantes</b><div class="precio"><span class="mxn show">$65 MXN</span><span class="cop">$65 MXN</span></div><button onclick="openModal('572 Diamantes ID', '$65 MXN', '$65 MXN')">Añadir</button></div>
-  <div class="producto"><b>1188 Diamantes</b><div class="precio"><span class="mxn show">$115 MXN</span><span class="cop">$115 MXN</span></div><button onclick="openModal('1188 Diamantes ID', '$115 MXN', '$115 MXN')">Añadir</button></div>
-  <div class="producto"><b>2398 Diamantes</b><div class="precio"><span class="mxn show">$220 MXN</span><span class="cop">$220 MXN</span></div><button onclick="openModal('2398 Diamantes ID', '$220 MXN', '$220 MXN')">Añadir</button></div>
-  <div class="producto"><b>6160 Diamantes</b><div class="precio"><span class="mxn show">$530 MXN</span><span class="cop">$530 MXN</span></div><button onclick="openModal('6160 Diamantes ID', '$530 MXN', '$530 MXN')">Añadir</button></div>
+  <div class="producto"><b>110 Diamantes</b><div class="precio"><span class="mxn show">$15 🇲🇽</span><span class="cop">$15 🇨🇴</span><span class="pen">S/15 🇵🇪</span></div><button onclick="openModal('110 Diamantes ID', '$15 🇲🇽', '$15 🇨🇴', 'S/15 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>6160 Diamantes</b><div class="precio"><span class="mxn show">$530 🇲🇽</span><span class="cop">$530 🇨🇴</span><span class="pen">S/530 🇵🇪</span></div><button onclick="openModal('6160 Diamantes ID', '$530 🇲🇽', '$530 🇨🇴', 'S/530 🇵🇪')">Añadir</button></div>
 </div>
 
+<!-- 4. PAQUETES INDIVIDUALES -->
 <div id="paquetes" class="content">
-  <div class="producto"><b>110 💎</b><div class="precio"><span class="mxn show">$18 MXN</span><span class="cop">$18 MXN</span></div><button onclick="openModal('Paquete 110 Diamantes', '$18 MXN', '$18 MXN')">Añadir</button></div>
-  <div class="producto"><b>341 💎</b><div class="precio"><span class="mxn show">$60 MXN</span><span class="cop">$60 MXN</span></div><button onclick="openModal('Paquete 341 Diamantes', '$60 MXN', '$60 MXN')">Añadir</button></div>
-  <div class="producto"><b>572 💎</b><div class="precio"><span class="mxn show">$85 MXN</span><span class="cop">$85 MXN</span></div><button onclick="openModal('Paquete 572 Diamantes', '$85 MXN', '$85 MXN')">Añadir</button></div>
-  <div class="producto"><b>1166 💎</b><div class="precio"><span class="mxn show">$145 MXN</span><span class="cop">$145 MXN</span></div><button onclick="openModal('Paquete 1166 Diamantes', '$145 MXN', '$145 MXN')">Añadir</button></div>
-  <div class="producto"><b>2398 💎</b><div class="precio"><span class="mxn show">$275 MXN</span><span class="cop">$275 MXN</span></div><button onclick="openModal('Paquete 2398 Diamantes', '$275 MXN', '$275 MXN')">Añadir</button></div>
-  <div class="producto"><b>6160 💎</b><div class="precio"><span class="mxn show">$670 MXN</span><span class="cop">$670 MXN</span></div><button onclick="openModal('Paquete 6160 Diamantes', '$670 MXN', '$670 MXN')">Añadir</button></div>
+  <div class="producto"><b>110 💎</b><div class="precio"><span class="mxn show">$18 🇲🇽</span><span class="cop">$18 🇨🇴</span><span class="pen">S/18 🇵🇪</span></div><button onclick="openModal('Paquete 110 Diamantes', '$18 🇲🇽', '$18 🇨🇴', 'S/18 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>6160 💎</b><div class="precio"><span class="mxn show">$670 🇲🇽</span><span class="cop">$670 🇨🇴</span><span class="pen">S/670 🇵🇪</span></div><button onclick="openModal('Paquete 6160 Diamantes', '$670 🇲🇽', '$670 🇨🇴', 'S/670 🇵🇪')">Añadir</button></div>
 </div>
 
+<!-- 5. BOOYAH -->
 <div id="booyah" class="content">
-  <div class="producto"><b>Pase Booyah</b><div class="precio"><span class="mxn show">$40 MXN</span><span class="cop">$40 MXN</span> - Por código</div><button onclick="openModal('Pase Booyah Código', '$40 MXN', '$40 MXN')">Añadir</button></div>
-  <div class="producto"><b>2 Pases Booyah</b><div class="precio"><span class="mxn show">$65 MXN</span><span class="cop">$65 MXN</span> - Por código</div><button onclick="openModal('2 Pases Booyah Código', '$65 MXN', '$65 MXN')">Añadir</button></div>
-  <div class="producto"><b>Pase Booyah</b><div class="precio"><span class="mxn show">$65 MXN</span><span class="cop">$65 MXN</span> - Por ID</div><button onclick="openModal('Pase Booyah ID', '$65 MXN', '$65 MXN')">Añadir</button></div>
-  <div class="producto"><b>T/Semanal</b><div class="precio"><span class="mxn show">$40 MXN</span><span class="cop">$40 MXN</span></div><button onclick="openModal('Token Semanal', '$40 MXN', '$40 MXN')">Añadir</button></div>
-  <div class="producto"><b>T/Mensual</b><div class="precio"><span class="mxn show">$150 MXN</span><span class="cop">$150 MXN</span></div><button onclick="openModal('Token Mensual', '$150 MXN', '$150 MXN')">Añadir</button></div>
+  <div class="producto"><b>Pase Booyah</b><div class="precio"><span class="mxn show">$40 🇲🇽</span><span class="cop">$40 🇨🇴</span><span class="pen">S/40 🇵🇪</span> - Por código</div><button onclick="openModal('Pase Booyah Código', '$40 🇲🇽', '$40 🇨🇴', 'S/40 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>T/Mensual</b><div class="precio"><span class="mxn show">$150 🇲🇽</span><span class="cop">$150 🇨🇴</span><span class="pen">S/150 🇵🇪</span></div><button onclick="openModal('Token Mensual', '$150 🇲🇽', '$150 🇨🇴', 'S/150 🇵🇪')">Añadir</button></div>
 </div>
 
+<!-- 6. BOTS -->
 <div id="bots" class="content">
   <h4>🤖 BOTS MENSUALES 🤖</h4>
-  <div class="producto"><b>1 por</b><div class="precio"><span class="mxn show">$40 MXN</span><span class="cop">$8,500 COP</span></div><button onclick="openModal('1 Bot Mensual', '$40 MXN', '$8,500 COP')">Añadir</button></div>
-  <div class="producto"><b>2 por</b><div class="precio"><span class="mxn show">$70 MXN</span><span class="cop">$14,500 COP</span></div><button onclick="openModal('2 Bots Mensuales', '$70 MXN', '$14,500 COP')">Añadir</button></div>
-  <div class="producto"><b>3 por</b><div class="precio"><span class="mxn show">$100 MXN</span><span class="cop">$25,000 COP</span></div><button onclick="openModal('3 Bots Mensuales', '$100 MXN', '$25,000 COP')">Añadir</button></div>
+  <div class="producto"><b>1 por</b><div class="precio"><span class="mxn show">$40 🇲🇽</span><span class="cop">$8.500 🇨🇴</span><span class="pen">S/8.00 🇵🇪</span></div><button onclick="openModal('1 Bot Mensual', '$40 🇲🇽', '$8.500 🇨🇴', 'S/8.00 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>2 por</b><div class="precio"><span class="mxn show">$70 🇲🇽</span><span class="cop">$14.500 🇨🇴</span><span class="pen">S/14.00 🇵🇪</span></div><button onclick="openModal('2 Bots Mensuales', '$70 🇲🇽', '$14.500 🇨🇴', 'S/14.00 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>3 por</b><div class="precio"><span class="mxn show">$100 🇲🇽</span><span class="cop">$25.000 🇨🇴</span><span class="pen">S/21.00 🇵🇪</span></div><button onclick="openModal('3 Bots Mensuales', '$100 🇲🇽', '$25.000 🇨🇴', 'S/21.00 🇵🇪')">Añadir</button></div>
   <h4>🤖 BOTS PERMANENTES 🤖</h4>
-  <div class="producto"><b>1 por</b><div class="precio"><span class="mxn show">$100 MXN</span><span class="cop">$25,000 COP</span></div><button onclick="openModal('1 Bot Permanente', '$100 MXN', '$25,000 COP')">Añadir</button></div>
-  <div class="producto"><b>2 por</b><div class="precio"><span class="mxn show">$180 MXN</span><span class="cop">$34,500 COP</span></div><button onclick="openModal('2 Bots Permanentes', '$180 MXN', '$34,500 COP')">Añadir</button></div>
-  <div class="producto"><b>3 por</b><div class="precio"><span class="mxn show">$260 MXN</span><span class="cop">$49,500 COP</span></div><button onclick="openModal('3 Bots Permanentes', '$260 MXN', '$49,500 COP')">Añadir</button></div>
+  <div class="producto"><b>1 por</b><div class="precio"><span class="mxn show">$100 🇲🇽</span><span class="cop">$25.000 🇨🇴</span><span class="pen">S/21.00 🇵🇪</span></div><button onclick="openModal('1 Bot Permanente', '$100 🇲🇽', '$25.000 🇨🇴', 'S/21.00 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>2 por</b><div class="precio"><span class="mxn show">$180 🇲🇽</span><span class="cop">$34.500 🇨🇴</span><span class="pen">S/36.00 🇵🇪</span></div><button onclick="openModal('2 Bots Permanentes', '$180 🇲🇽', '$34.500 🇨🇴', 'S/36.00 🇵🇪')">Añadir</button></div>
+  <div class="producto"><b>3 por</b><div class="precio"><span class="mxn show">$260 🇲🇽</span><span class="cop">$49.500 🇨🇴</span><span class="pen">S/52.00 🇵🇪</span></div><button onclick="openModal('3 Bots Permanentes', '$260 🇲🇽', '$49.500 🇨🇴', 'S/52.00 🇵🇪')">Añadir</button></div>
   <p class="nota">*_Más grupos y más tiempo se cotiza_* 💗</p>
 </div>
 
+<!-- 7. STREAMING -->
 <div id="streaming" class="content">
-  <div class="producto"><b>Disney+ Completa 1M c/panel</b><div class="precio"><span class="mxn show">$75 MXN</span><span class="cop">$75 MXN</span></div><button onclick="openModal('Disney+ Completa 1M c/panel', '$75 MXN', '$75 MXN')">Añadir</button></div>
-  <div class="producto"><b>Netflix Perfil</b><div class="precio"><span class="mxn show">$55 MXN</span><span class="cop">$55 MXN</span></div><button onclick="openModal('Netflix Perfil', '$55 MXN', '$55 MXN')">Añadir</button></div>
-  <div class="producto"><b>Netflix Completa</b><div class="precio"><span class="mxn show">$240 MXN</span><span class="cop">$240 MXN</span></div><button onclick="openModal('Netflix Completa', '$240 MXN', '$240 MXN')">Añadir</button></div>
+  <div class="producto"><b>Netflix Completa</b><div class="precio"><span class="mxn show">$240 🇲🇽</span><span class="cop">$240 🇨🇴</span><span class="pen">S/240 🇵🇪</span></div><button onclick="openModal('Netflix Completa', '$240 🇲🇽', '$240 🇨🇴', 'S/240 🇵🇪')">Añadir</button></div>
 </div>
 
+<!-- 8. APPS -->
 <div id="apps" class="content">
-  <div class="producto"><b>Duolingo Individual</b><div class="precio"><span class="mxn show">$40 MXN</span><span class="cop">$40 MXN</span></div><button onclick="openModal('Duolingo Individual', '$40 MXN', '$40 MXN')">Añadir</button></div>
-  <div class="producto"><b>Canva Pro 1 Mes</b><div class="precio"><span class="mxn show">$20 MXN</span><span class="cop">$20 MXN</span></div><button onclick="openModal('Canva Pro 1 Mes', '$20 MXN', '$20 MXN')">Añadir</button></div>
-  <div class="producto"><b>Spotify Premium 3 Meses</b><div class="precio"><span class="mxn show">$95 MXN</span><span class="cop">$95 MXN</span></div><button onclick="openModal('Spotify 3 Meses', '$95 MXN', '$95 MXN')">Añadir</button></div>
+  <div class="producto"><b>Spotify Premium 3 Meses</b><div class="precio"><span class="mxn show">$95 🇲🇽</span><span class="cop">$95 🇨🇴</span><span class="pen">S/95 🇵🇪</span></div><button onclick="openModal('Spotify 3 Meses', '$95 🇲🇽', '$95 🇨🇴', 'S/95 🇵🇪')">Añadir</button></div>
 </div>
 
+<!-- 9. DOCUMENTOS -->
 <div id="documentos" class="content">
-  <div class="producto"><b>Recetas médicas IMSS/Similares</b><div class="precio"><span class="mxn show">$45 MXN</span><span class="cop">$45 MXN</span></div><button onclick="openModal('Recetas médicas', '$45 MXN', '$45 MXN')">Añadir</button></div>
-  <div class="producto"><b>Incapacidad IMSS</b><div class="precio"><span class="mxn show">$45 MXN</span><span class="cop">$45 MXN</span></div><button onclick="openModal('Incapacidad IMSS', '$45 MXN', '$45 MXN')">Añadir</button></div>
-  <div class="producto"><b>Certificados Prim/Sec/Prepa</b><div class="precio"><span class="mxn show">$45 MXN</span><span class="cop">$45 MXN</span></div><button onclick="openModal('Certificados', '$45 MXN', '$45 MXN')">Añadir</button></div>
-  <div class="producto"><b>Actas Nac/Mat/Div/Def</b><div class="precio"><span class="mxn show">$25 MXN</span><span class="cop">$25 MXN</span></div><button onclick="openModal('Actas', '$25 MXN', '$25 MXN')">Añadir</button></div>
+  <div class="producto"><b>Certificados Prim/Sec/Prepa</b><div class="precio"><span class="mxn show">$45 🇲🇽</span><span class="cop">$45 🇨🇴</span><span class="pen">S/45 🇵🇪</span></div><button onclick="openModal('Certificados', '$45 🇲🇽', '$45 🇨🇴', 'S/45 🇵🇪')">Añadir</button></div>
 </div>
 
-<div id="modal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal()">×</span><h3 id="modal-title" style="color:#FF4D6D"></h3><p id="modal-price"></p><p>Descripción: Entrega inmediata. Servicio 100% confiable ☁️💗</p><label>Cantidad: <input type="number" id="cantidad" value="1" min="1" style="width:50px; border-radius:8px; border:1px solid #D8B4F8"></label><br><br><button onclick="addToCart()" style="background:#FF4D6D; color:white; border:none; padding:10px 20px; border-radius:15px; font-weight:700">Añadir al carrito 🎀</button></div></div>
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-price"></p>
+    <p>Descripción: Entrega inmediata. Servicio 100% confiable ☁️💗</p>
+    <label>Cantidad: <input type="number" id="cantidad" value="1" min="1"></label><br><br>
+    <button onclick="addToCart()">Añadir al carrito 🎀</button>
+  </div>
+</div>
+
 <div class="cart-btn" onclick="toggleCart()">🛒</div>
-<div id="cart" class="cart"><h3 style="color:#FF4D6D; text-align:center">Tu Pedido ☁️</h3><div id="cart-items"></div><button onclick="sendWhatsApp()">Comprar por WhatsApp 💌</button></div>
+<div id="cart" class="cart">
+  <h3>Tu Pedido ☁️</h3>
+  <div id="cart-items"></div>
+  <button onclick="sendWhatsApp()">Comprar por WhatsApp 💌</button>
+</div>
 
 <footer>
   ☁️ ¡Gracias por tu preferencia! ☁️<br>
@@ -160,29 +125,6 @@
   <b>Estoy a tus servicios</b> 🎀
 </footer>
 
-<script>
-let cart = []; let currentProduct = {}; let currentCurrency = 'mxn';
-function setCurrency(curr) {
-  currentCurrency = curr;
-  document.querySelectorAll('.precio .mxn, .precio .cop').forEach(el => el.classList.remove('show')); // ARREGLADO
-  document.querySelectorAll('.precio .' + curr).forEach(el => el.classList.add('show')); // ARREGLADO
-  document.getElementById('btn-mxn').classList.remove('active');
-  document.getElementById('btn-cop').classList.remove('active');
-  document.getElementById('btn-' + curr).classList.add('active');
-}
-function showTab(id) { document.querySelectorAll('.content').forEach(c => c.classList.remove('active')); document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); document.getElementById(id).classList.add('active'); event.target.classList.add('active'); }
-function openModal(title, priceMXN, priceCOP) {
-  let price = currentCurrency === 'mxn'? priceMXN : priceCOP;
-  currentProduct = {title, price};
-  document.getElementById('modal-title').innerText = title;
-  document.getElementById('modal-price').innerText = price;
-  document.getElementById('modal').style.display = 'flex';
-}
-function closeModal() { document.getElementById('modal').style.display = 'none'; }
-function addToCart() { let qty = document.getElementById('cantidad').value; cart.push({...currentProduct, qty}); renderCart(); closeModal(); alert('¡Añadido al carrito! 🎀'); }
-function renderCart() { let html = ''; cart.forEach(item => { html += `<div style="margin:5px 0">${item.title} x${item.qty} - ${item.price}</div>`; }); document.getElementById('cart-items').innerHTML = html || '<p style="text-align:center">Carrito vacío 🪷</p>'; }
-function toggleCart() { let c = document.getElementById('cart'); c.style.display = c.style.display === 'block'? 'none' : 'block'; }
-function sendWhatsApp() { if(cart.length === 0) return alert('Agrega productos primero 💗'); let msg = "☁️💗 HOLA ANDREITA 💗☁️%0A%0AMi pedido:%0A"; cart.forEach(item => { msg += `- ${item.title} x${item.qty} - ${item.price}%0A`; }); msg += "%0A¡Gracias! 🎀🪷"; window.open(`https://wa.me/573215829404?text=${msg}`, '_blank'); }
-</script>
+<script src="script.js"></script>
 </body>
 </html>
