@@ -1,102 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andreitap Shop 🌸</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andreitap Ventas ✨ Hello Kitty</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>🌸 Andreitap Shop 🌸</h1>
-  <div class="selector-pais">
-    <label for="pais">País:</label>
+  <header>
+    <div class="logo-center">
+      <img src="logo.png" alt="Logo Principal Andreitap">
+      <h1>Andreitap Ventas</h1>
+      <p>✨ Todo original Hello Kitty ✨</p>
+    </div>
+  </header>
+
+  <section class="banner-fotos">
+    <img src="logo1.png" alt="Foto 1">
+    <img src="logo.png" alt="Foto Principal">
+    <img src="logo2.png" alt="Foto 2">
+  </section>
+
+  <div class="pais-selector">
+    <label for="pais">🌎 Elige tu país: </label>
     <select id="pais">
-      <option value="MX" data-simbolo="$">México 🇲🇽</option>
-      <option value="CO" data-simbolo="$">Colombia 🇨🇴</option>
-      <option value="PE" data-simbolo="S/">Perú 🇵🇪</option>
-      <option value="DIAMANTES" data-simbolo="">Diamantes 💎</option>
+      <option value="MX" data-simbolo="$" data-moneda="MXN">México 🇲🇽</option>
+      <option value="CO" data-simbolo="$" data-moneda="COP">Colombia 🇨🇴</option>
+      <option value="PE" data-simbolo="S/" data-moneda="PEN">Perú 🇵🇪</option>
+      <option value="DIAMANTES" data-simbolo="" data-moneda="💎">Diamantes 💎</option>
     </select>
+    <h2 id="titulo-pais">Precios para México 🇲🇽</h2>
   </div>
-  <button id="btn-ver-carrito">🛒 Carrito <span id="contador-carrito">0</span></button>
-</header>
 
-<nav class="menu-categorias">
-  <a href="#caligrafico" class="cat">Caligráficos</a>
-  <a href="#bots" class="cat">Bots Mensuales</a>
-  <a href="#bots-perm" class="cat">Bots Permanentes</a>
-  <a href="#recargas" class="cat">Recargas</a>
-  <a href="#otros" class="cat">Otros</a>
-</nav>
+  <button id="btn-ver-carrito" class="carrito-flotante">🛒 <span id="contador-carrito">0</span></button>
 
-<main>
-  <h2 id="titulo-pais">Precios para México 🇲🇽</h2>
-
-  <!-- CALIGRAFICOS -->
-  <section id="caligrafico" class="precios">
-    <h3>CALIGRÁFICO SIMPLE</h3>
-    <div class="producto"><p><b>x1</b> <span class="precio" data-mx="20" data-co="5500" data-pe="3" data-d="100"></span></p><button class="btn-carrito" data-nombre="Caligráfico Simple x1">Añadir</button></div>
-    <div class="producto"><p><b>x3</b> <span class="precio" data-mx="50" data-co="13500" data-pe="10" data-d="300"></span></p><button class="btn-carrito" data-nombre="Caligráfico Simple x3">Añadir</button></div>
-    <div class="producto"><p><b>x5</b> <span class="precio" data-mx="85" data-co="18500" data-pe="17" data-d="400"></span></p><button class="btn-carrito" data-nombre="Caligráfico Simple x5">Añadir</button></div>
-
-    <h3>CALIGRÁFICO MÁS OBJETO</h3>
-    <div class="producto"><p><b>x1</b> <span class="precio" data-mx="30" data-co="7500" data-pe="10" data-d="200"></span></p><button class="btn-carrito" data-nombre="Caligráfico + Objeto x1">Añadir</button></div>
-    <div class="producto"><p><b>x3</b> <span class="precio" data-mx="80" data-co="16500" data-pe="16" data-d="400"></span></p><button class="btn-carrito" data-nombre="Caligráfico + Objeto x3">Añadir</button></div>
-    <div class="producto"><p><b>x5</b> <span class="precio" data-mx="130" data-co="26500" data-pe="26" data-d="700"></span></p><button class="btn-carrito" data-nombre="Caligráfico + Objeto x5">Añadir</button></div>
-
-    <h3>CALIGRÁFICO TEMÁTICO</h3>
-    <div class="producto"><p><b>x1</b> <span class="precio" data-mx="40" data-co="9000" data-pe="8" data-d="200"></span></p><button class="btn-carrito" data-nombre="Caligráfico Temático x1">Añadir</button></div>
-    <div class="producto"><p><b>x3</b> <span class="precio" data-mx="100" data-co="24500" data-pe="20" data-d="500"></span></p><button class="btn-carrito" data-nombre="Caligráfico Temático x3">Añadir</button></div>
-    <div class="producto"><p><b>x5</b> <span class="precio" data-mx="170" data-co="33500" data-pe="34" data-d="800"></span></p><button class="btn-carrito" data-nombre="Caligráfico Temático x5">Añadir</button></div>
-  </section>
-
-  <!-- BOTS MENSUALES -->
-  <section id="bots" class="precios">
-    <h3>BOTS MENSUALES</h3>
-    <div class="producto"><p><b>x1</b> <span class="precio" data-mx="40" data-co="8500" data-pe="8" data-d="200"></span></p><button class="btn-carrito" data-nombre="Bot Mensual x1">Añadir</button></div>
-    <div class="producto"><p><b>x2</b> <span class="precio" data-mx="70" data-co="14500" data-pe="14" data-d="500"></span></p><button class="btn-carrito" data-nombre="Bot Mensual x2">Añadir</button></div>
-    <div class="producto"><p><b>x3</b> <span class="precio" data-mx="100" data-co="25000" data-pe="21" data-d="700"></span></p><button class="btn-carrito" data-nombre="Bot Mensual x3">Añadir</button></div>
-  </section>
-
-  <!-- BOTS PERMANENTES -->
-  <section id="bots-perm" class="precios">
-    <h3>BOTS PERMANENTES</h3>
-    <div class="producto"><p><b>x1</b> <span class="precio" data-mx="100" data-co="25000" data-pe="21" data-d="600"></span></p><button class="btn-carrito" data-nombre="Bot Permanente x1">Añadir</button></div>
-    <div class="producto"><p><b>x2</b> <span class="precio" data-mx="180" data-co="34500" data-pe="36" data-d="1000"></span></p><button class="btn-carrito" data-nombre="Bot Permanente x2">Añadir</button></div>
-    <div class="producto"><p><b>x3</b> <span class="precio" data-mx="260" data-co="49500" data-pe="52" data-d="2000"></span></p><button class="btn-carrito" data-nombre="Bot Permanente x3">Añadir</button></div>
-    <p style="text-align:center; margin-top:15px; font-weight:700;">Más grupos y más tiempo se cotiza</p>
-  </section>
-
-  <!-- RECARGAS -->
-  <section id="recargas" class="precios">
-    <h3>RECARGAS</h3>
-    <div class="producto"><p><b>Recarga 110 ID</b> <span class="precio" data-mx="15" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Recarga 110 ID">Añadir</button></div>
-    <div class="producto"><p><b>Recarga 341 ID</b> <span class="precio" data-mx="40" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Recarga 341 ID">Añadir</button></div>
-  </section>
-
-  <!-- OTROS -->
-  <section id="otros" class="precios">
-    <h3>MÉTODOS DE PAGO</h3>
-    <p>• Nequi</p>
-    <p>• Bancolombia</p>
-    <p>• Transferencia MX</p>
-    <p>• Diamantes 💎</p>
-    <p>• Soles</p>
-  </section>
-</main>
-
-<!-- VENTANA CARRITO -->
-<div id="ventana-carrito">
-  <div class="carrito-contenido">
-    <h3>Tu Pedido 🎀</h3>
-    <div id="lista-carrito"></div>
-    <p><b>Total productos:</b> <span id="total-items">0</span></p>
-    <button id="enviar-whatsapp">Enviar por WhatsApp</button>
-    <button id="cerrar-carrito">Cerrar</button>
+  <div id="ventana-carrito" class="ventana-carrito">
+    <div class="carrito-contenido">
+      <span id="cerrar-carrito">X</span>
+      <h2>🛒 Tu Carrito</h2>
+      <div id="lista-carrito"></div>
+      <p><b>Total de items:</b> <span id="total-items">0</span></p>
+      <button id="enviar-whatsapp">Enviar por WhatsApp</button>
+    </div>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <main>
+    <div class="nav-categorias">
+      <h2>🌸 Categorías 🌸</h2>
+      <div class="categorias">
+        <a href="#caligraficos" class="cat">Caligráficos</a>
+        <a href="#bots" class="cat">Bots</a>
+        <a href="#streaming" class="cat">Streaming</a>
+        <a href="#documentos" class="cat">Documentos</a>
+        <a href="#recargas" class="cat">Recargas</a>
+        <a href="#otros" class="cat">Otros</a>
+      </div>
+    </div>
+
+    <!-- CALIGRAFICOS -->
+    <section id="caligraficos" class="precios">
+      <h3>CALIGRÁFICO SIMPLE</h3>
+      <div class="producto"><p><b>1 por</b> <span class="precio" data-mx="20" data-co="5500" data-pe="3" data-d="100"></span></p><button class="btn-carrito" data-nombre="Caligráfico Simple x1">Añadir</button></div>
+      <div class="producto"><p><b>3 por</b> <span class="precio" data-mx="50" data-co="13500" data-pe="10" data-d="300"></span></p><button class="btn-carrito" data-nombre="Caligráfico Simple x3">Añadir</button></div>
+      <div class="producto"><p><b>5 por</b> <span class="precio" data-mx="85" data-co="18500" data-pe="17" data-d="400"></span></p><button class="btn-carrito" data-nombre="Caligráfico Simple x5">Añadir</button></div>
+
+      <h3>CALIGRÁFICO MÁS OBJETO</h3>
+      <div class="producto"><p><b>1 por</b> <span class="precio" data-mx="30" data-co="7500" data-pe="10" data-d="200"></span></p><button class="btn-carrito" data-nombre="Caligráfico + Objeto x1">Añadir</button></div>
+      <div class="producto"><p><b>3 por</b> <span class="precio" data-mx="80" data-co="16500" data-pe="16" data-d="400"></span></p><button class="btn-carrito" data-nombre="Caligráfico + Objeto x3">Añadir</button></div>
+      <div class="producto"><p><b>5 por</b> <span class="precio" data-mx="130" data-co="26500" data-pe="26" data-d="700"></span></p><button class="btn-carrito" data-nombre="Caligráfico + Objeto x5">Añadir</button></div>
+
+      <h3>CALIGRÁFICO TEMÁTICO</h3>
+      <div class="producto"><p><b>1 por</b> <span class="precio" data-mx="40" data-co="9000" data-pe="8" data-d="200"></span></p><button class="btn-carrito" data-nombre="Caligráfico Temático x1">Añadir</button></div>
+      <div class="producto"><p><b>3 por</b> <span class="precio" data-mx="100" data-co="24500" data-pe="20" data-d="500"></span></p><button class="btn-carrito" data-nombre="Caligráfico Temático x3">Añadir</button></div>
+      <div class="producto"><p><b>5 por</b> <span class="precio" data-mx="170" data-co="33500" data-pe="34" data-d="800"></span></p><button class="btn-carrito" data-nombre="Caligráfico Temático x5">Añadir</button></div>
+    </section>
+
+    <!-- BOTS -->
+    <section id="bots" class="precios">
+      <h3>BOTS MENSUALES</h3>
+      <div class="producto"><p><b>1 por</b> <span class="precio" data-mx="40" data-co="8500" data-pe="8" data-d="200"></span></p><button class="btn-carrito" data-nombre="Bot Mensual x1">Añadir</button></div>
+      <div class="producto"><p><b>2 por</b> <span class="precio" data-mx="70" data-co="14500" data-pe="14" data-d="500"></span></p><button class="btn-carrito" data-nombre="Bot Mensual x2">Añadir</button></div>
+      <div class="producto"><p><b>3 por</b> <span class="precio" data-mx="100" data-co="25000" data-pe="21" data-d="700"></span></p><button class="btn-carrito" data-nombre="Bot Mensual x3">Añadir</button></div>
+
+      <h3>BOTS PERMANENTES</h3>
+      <div class="producto"><p><b>1 por</b> <span class="precio" data-mx="100" data-co="25000" data-pe="21" data-d="600"></span></p><button class="btn-carrito" data-nombre="Bot Permanente x1">Añadir</button></div>
+      <div class="producto"><p><b>2 por</b> <span class="precio" data-mx="180" data-co="34500" data-pe="36" data-d="1000"></span></p><button class="btn-carrito" data-nombre="Bot Permanente x2">Añadir</button></div>
+      <div class="producto"><p><b>3 por</b> <span class="precio" data-mx="260" data-co="49500" data-pe="52" data-d="2000"></span></p><button class="btn-carrito" data-nombre="Bot Permanente x3">Añadir</button></div>
+      <p style="text-align:center; margin-top:15px; color:#999;">*Más grupos y más tiempo se cotiza</p>
+    </section>
+
+    <!-- STREAMING -->
+    <section id="streaming" class="precios">
+      <h3>🎬 DISNEY+</h3>
+      <div class="producto"><p><b>Completa 1M con panel</b> <span class="precio" data-mx="75" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Disney+ Completa con panel">Añadir</button></div>
+      <div class="producto"><p><b>Perfil 1 Mes</b> <span class="precio" data-mx="20" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Disney+ Perfil">Añadir</button></div>
+
+      <h3>📺 PRIME VIDEO</h3>
+      <div class="producto"><p><b>Perfil 1 Mes</b> <span class="precio" data-mx="18" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Prime Perfil">Añadir</button></div>
+      <div class="producto"><p><b>Completa 1 Mes</b> <span class="precio" data-mx="45" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Prime Completa">Añadir</button></div>
+
+      <h3>🍿 NETFLIX</h3>
+      <div class="producto"><p><b>Perfil</b> <span class="precio" data-mx="55" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Netflix Perfil">Añadir</button></div>
+      <div class="producto"><p><b>Completa</b> <span class="precio" data-mx="240" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Netflix Completa">Añadir</button></div>
+
+      <h3>📡 PARAMOUNT</h3>
+      <div class="producto"><p><b>Perfil 1 Mes</b> <span class="precio" data-mx="15" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Paramount Perfil">Añadir</button></div>
+
+      <h3>📌 HBO MAX + HULU</h3>
+      <div class="producto"><p><b>Perfil 1 Mes</b> <span class="precio" data-mx="18" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="HBO Perfil">Añadir</button></div>
+
+      <h3>🎞️ VIX PREMIUM</h3>
+      <div class="producto"><p><b>Perfil 1 Mes</b> <span class="precio" data-mx="10" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="VIX Perfil">Añadir</button></div>
+
+      <h3>🔞 PORNHUB</h3>
+      <div class="producto"><p><b>Perfil</b> <span class="precio" data-mx="25" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Pornhub Perfil">Añadir</button></div>
+
+      <h3>📡 IPTV</h3>
+      <div class="producto"><p><b>Perfil 1 Mes</b> <span class="precio" data-mx="25" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="IPTV Perfil">Añadir</button></div>
+
+      <h3>🎥 MUBI</h3>
+      <div class="producto"><p><b>1 Unidad</b> <span class="precio" data-mx="30" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="MUBI">Añadir</button></div>
+
+      <h3>🦉 DUOLINGO</h3>
+      <div class="producto"><p><b>Individual</b> <span class="precio" data-mx="40" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Duolingo Individual">Añadir</button></div>
+
+      <h3>🎨 CANVA PRO</h3>
+      <div class="producto"><p><b>Invitación 1 Mes</b> <span class="precio" data-mx="20" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Canva Pro">Añadir</button></div>
+
+      <h3>🎵 SPOTIFY PREMIUM</h3>
+      <div class="producto"><p><b>3 Meses</b> <span class="precio" data-mx="95" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Spotify 3 Meses">Añadir</button></div>
+      <p style="text-align:center; margin-top:15px; color:#999;">*Streaming solo MX. En Diamantes/CO/PE dice Cotizar</p>
+    </section>
+
+    <!-- DOCUMENTOS -->
+    <section id="documentos" class="precios">
+      <h3>📂 DOCUMENTOS</h3>
+      <div class="producto"><p><b>Recetas médicas</b> <span class="precio" data-mx="45" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Recetas médicas">Añadir</button></div>
+      <div class="producto"><p><b>Incapacidad IMSS</b> <span class="precio" data-mx="45" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Incapacidad IMSS">Añadir</button></div>
+      <div class="producto"><p><b>Certificados</b> <span class="precio" data-mx="45" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Certificados">Añadir</button></div>
+      <div class="producto"><p><b>Actas</b> <span class="precio" data-mx="25" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Actas">Añadir</button></div>
+    </section>
+
+    <!-- RECARGAS -->
+    <section id="recargas" class="precios">
+      <h3>☁️ RECARGAS DE UNA VEZ POR ID</h3>
+      <div class="producto"><p><b>110 💎</b> <span class="precio" data-mx="15" data-co="0" data-pe="0" data-d="15"></span></p><button class="btn-carrito" data-nombre="Recarga 110 ID">Añadir</button></div>
+      <div class="producto"><p><b>341 💎</b> <span class="precio" data-mx="45" data-co="0" data-pe="0" data-d="45"></span></p><button class="btn-carrito" data-nombre="Recarga 341 ID">Añadir</button></div>
+      <div class="producto"><p><b>572 💎</b> <span class="precio" data-mx="65" data-co="0" data-pe="0" data-d="65"></span></p><button class="btn-carrito" data-nombre="Recarga 572 ID">Añadir</button></div>
+      <div class="producto"><p><b>1166 💎</b> <span class="precio" data-mx="115" data-co="0" data-pe="0" data-d="115"></span></p><button class="btn-carrito" data-nombre="Recarga 1166 ID">Añadir</button></div>
+      <div class="producto"><p><b>2398 💎</b> <span class="precio" data-mx="220" data-co="0" data-pe="0" data-d="220"></span></p><button class="btn-carrito" data-nombre="Recarga 2398 ID">Añadir</button></div>
+      <div class="producto"><p><b>6160 💎</b> <span class="precio" data-mx="530" data-co="0" data-pe="0" data-d="530"></span></p><button class="btn-carrito" data-nombre="Recarga 6160 ID">Añadir</button></div>
+
+      <h3>🎀 PAQUETES INDIVIDUALES</h3>
+      <div class="producto"><p><b>110 💎</b> <span class="precio" data-mx="18" data-co="0" data-pe="0" data-d="18"></span></p><button class="btn-carrito" data-nombre="Paquete 110">Añadir</button></div>
+      <div class="producto"><p><b>341 💎</b> <span class="precio" data-mx="60" data-co="0" data-pe="0" data-d="60"></span></p><button class="btn-carrito" data-nombre="Paquete 341">Añadir</button></div>
+      <div class="producto"><p><b>572 💎</b> <span class="precio" data-mx="85" data-co="0" data-pe="0" data-d="85"></span></p><button class="btn-carrito" data-nombre="Paquete 572">Añadir</button></div>
+      <div class="producto"><p><b>1,166 💎</b> <span class="precio" data-mx="145" data-co="0" data-pe="0" data-d="145"></span></p><button class="btn-carrito" data-nombre="Paquete 1166">Añadir</button></div>
+      <div class="producto"><p><b>2,398 💎</b> <span class="precio" data-mx="275" data-co="0" data-pe="0" data-d="275"></span></p><button class="btn-carrito" data-nombre="Paquete 2398">Añadir</button></div>
+      <div class="producto"><p><b>6,160 💎</b> <span class="precio" data-mx="670" data-co="0" data-pe="0" data-d="670"></span></p><button class="btn-carrito" data-nombre="Paquete 6160">Añadir</button></div>
+    </section>
+
+    <!-- OTROS -->
+    <section id="otros" class="precios">
+      <h3>OTROS PRODUCTOS</h3>
+      <div class="producto"><p><b>Pase booyah</b> <span class="precio" data-mx="40" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Pase booyah">Añadir</button></div>
+      <div class="producto"><p><b>Dos pases booyah</b> <span class="precio" data-mx="65" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Dos pases booyah">Añadir</button></div>
+      <div class="producto"><p><b>Pase booyah por ID</b> <span class="precio" data-mx="65" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="Pase booyah por ID">Añadir</button></div>
+      <div class="producto"><p><b>T/Semanal</b> <span class="precio" data-mx="40" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="T/Semanal">Añadir</button></div>
+      <div class="producto"><p><b>T/Mensual</b> <span class="precio" data-mx="150" data-co="0" data-pe="0" data-d="0"></span></p><button class="btn-carrito" data-nombre="T/Mensual">Añadir</button></div>
+    </section>
+
+  </main>
+
+  <a href="https://wa.me/573215829404" target="_blank" class="whatsapp-btn">💬</a>
+
+  <footer>
+    <h3>*MÉTODOS DE PAGO*</h3>
+    <p>Nequi • Bancolombia • Transferencia MX • Diamantes • Yape • PrexPex</p>
+    <p>💗☁️ ¡Gracias por tu preferencia! ☁️💗</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
