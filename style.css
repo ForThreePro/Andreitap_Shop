@@ -1,138 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Quicksand:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Fredoka:wght@500;600;700&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
-body { 
-  background: linear-gradient(180deg, #ffd6eb 0%, #fff5fb 100%);
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><text x="10" y="20" font-size="20">🎀</text><text x="35" y="45" font-size="20">💗</text></svg>');
-  color: #4a2c4e;
+:root {
+  --rosa: #FF69B4;
+  --rosa-claro: #FFB6D9;
+  --rosa-pastel: #FFF0F6;
+  --blanco: #FFFFFF;
+  --texto: #4A2C4E;
 }
 
-/* HEADER PRO */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Nunito', sans-serif; }
+body { background: var(--rosa-pastel); color: var(--texto); }
+
+/* HEADER LIMPIO */
 header { 
-  display: flex; align-items: center; justify-content: space-between; 
-  background: linear-gradient(135deg, #ff66b3 0%, #ff99cc 100%); 
-  padding: 25px 15px; 
-  border-bottom: 5px solid #ff3399;
-  box-shadow: 0 5px 20px rgba(255, 51, 153, 0.3);
+  background: linear-gradient(135deg, var(--rosa) 0%, #FF85C1 100%); 
+  padding: 30px 20px; text-align: center;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
 }
-.logo-side { width: 70px; height: 70px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); }
-.logo-center { text-align: center; color: white; }
-.logo-center img { width: 140px; animation: flotar 3s ease-in-out infinite; }
-.logo-center h1 { font-family: 'Poppins', sans-serif; font-size: 2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-@keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.logo-center img { width: 120px; margin-bottom: 10px; }
+.logo-center h1 { font-family: 'Fredoka'; font-size: 2.2rem; color: white; text-shadow: 2px 2px 0px #D147A3; }
+.logo-center p { color: white; font-weight: 700; font-size: 1.1rem; }
 
-/* BANNER DE FOTOS */
+/* BANNER DE LOGOS */
 .banner-fotos { 
-  display: flex; justify-content: center; gap: 15px; 
-  padding: 25px 15px; background: white; 
-  border-bottom: 4px dashed #ffb3da; 
+  display: flex; justify-content: center; gap: 20px; 
+  padding: 30px 20px; margin-top: -20px;
 }
 .banner-fotos img { 
-  width: 120px; height: 120px; object-fit: contain; 
-  border-radius: 25px; border: 4px solid #ff99cc; 
-  background: linear-gradient(135deg, #fff0f8, #ffe6f2); 
-  padding: 8px; transition: 0.3s; 
-  box-shadow: 0 4px 12px rgba(255, 153, 204, 0.3);
+  width: 100px; height: 100px; object-fit: contain; 
+  background: white; border-radius: 25px; 
+  padding: 10px; border: 4px solid var(--rosa-claro);
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.2);
 }
-.banner-fotos img:hover { transform: scale(1.1) rotate(-3deg); }
 
 /* SELECTOR PAIS */
 .pais-selector { 
-  background: white; text-align: center; padding: 20px; 
-  margin: 20px; border-radius: 25px; 
-  box-shadow: 0 6px 20px rgba(255, 153, 204, 0.2);
-  border: 2px solid #ffb3da;
+  background: white; margin: 20px; padding: 20px; 
+  border-radius: 25px; text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 .pais-selector select { 
-  padding: 10px 15px; border-radius: 15px; 
-  border: 2px solid #ff66b3; font-size: 1rem; 
-  background: #fff0f8; font-weight: 600;
+  padding: 12px 20px; border-radius: 15px; 
+  border: 2px solid var(--rosa-claro); font-weight: 700;
+  font-size: 1rem; margin: 10px 0;
 }
 
 /* CONTADOR */
 .contador { 
-  background: linear-gradient(90deg, #ff66b3, #ff99cc); 
-  color: white; text-align: center; padding: 12px; 
-  font-size: 1.1rem; font-weight: 700; 
-  margin: 0 20px; border-radius: 15px;
+  background: var(--rosa); color: white; 
+  text-align: center; padding: 15px; margin: 0 20px 20px 20px;
+  border-radius: 20px; font-weight: 900; font-size: 1.1rem;
 }
 
-/* CARRITO */
-.carrito-flotante { 
-  position: fixed; top: 20px; right: 20px; 
-  background: linear-gradient(135deg, #ff66b3, #ff3399); 
-  color: white; padding: 12px 20px; 
-  border-radius: 30px; font-weight: 700; 
-  z-index: 999; border: none; cursor: pointer; 
-  box-shadow: 0 6px 20px rgba(255, 51, 153, 0.4);
-  font-size: 1.1rem;
+/* CATEGORIAS COMO PESTAÑAS - APARTE */
+.nav-categorias {
+  background: white; margin: 20px; padding: 15px;
+  border-radius: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  position: sticky; top: 10px; z-index: 10;
 }
-
-/* VENTANA CARRITO */
-.ventana-carrito { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
-.carrito-contenido { background: white; padding: 25px; border-radius: 25px; width: 90%; max-width: 500px; border: 4px solid #ff99cc; }
-#cerrar-carrito { float: right; font-size: 28px; cursor: pointer; color: #ff3399; font-weight: 700; }
-.item-carrito { padding: 12px; border-bottom: 2px dashed #ffb3da; display: flex; justify-content: space-between; }
-#enviar-whatsapp { width: 100%; padding: 15px; background: linear-gradient(135deg, #25D366, #1ebe5b); color: white; border: none; border-radius: 15px; font-size: 1.1rem; font-weight: 700; cursor: pointer; margin-top: 15px; }
-
-/* CATEGORIAS */
-.section-title { text-align: center; margin: 25px 0 15px 0; color: #ff3399; font-family: 'Poppins'; font-size: 1.5rem; }
-.categorias { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 0 20px; }
+.nav-categorias h2 { text-align: center; color: var(--rosa); margin-bottom: 15px; font-family: 'Fredoka'; }
+.categorias { 
+  display: grid; grid-template-columns: repeat(3, 1fr); 
+  gap: 12px; 
+}
 .cat { 
-  background: linear-gradient(135deg, #ff66b3, #ff99cc); 
-  color: white; padding: 12px 22px; 
-  border-radius: 25px; text-decoration: none; 
-  font-weight: 700; transition: 0.3s;
-  box-shadow: 0 4px 10px rgba(255, 102, 179, 0.3);
+  background: var(--rosa-pastel); color: var(--rosa); 
+  padding: 14px 10px; border-radius: 18px; 
+  text-decoration: none; font-weight: 700; text-align: center;
+  border: 2px solid var(--rosa-claro); transition: 0.3s;
 }
-.cat:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255, 102, 179, 0.4); }
+.cat:hover, .cat.activa { 
+  background: var(--rosa); color: white; 
+  transform: translateY(-2px);
+}
 
 /* PRODUCTOS */
 .precios { 
-  background: white; margin: 20px; padding: 20px; 
-  border-radius: 25px; border: 3px solid #ffb3da; 
-  box-shadow: 0 6px 20px rgba(255, 179, 218, 0.2);
+  background: white; margin: 20px; padding: 25px; 
+  border-radius: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  display: none; /* Se ocultan y solo se muestra 1 */
 }
+.precios.activo { display: block; }
 .precios h3 { 
-  color: #ff3399; margin: 15px 0 15px 0; 
-  font-family: 'Poppins'; font-size: 1.2rem;
-  border-left: 5px solid #ff66b3; padding-left: 10px;
+  color: var(--rosa); font-family: 'Fredoka'; font-size: 1.3rem;
+  margin: 20px 0 15px 0; padding-bottom: 8px;
+  border-bottom: 3px solid var(--rosa-claro);
 }
 .producto { 
-  display: flex; justify-content: space-between; align-items: center; 
-  margin: 12px 0; padding: 15px; 
-  background: linear-gradient(90deg, #fff0f8, #ffe6f2); 
-  border-radius: 18px; border: 2px solid #ffb3da;
+  background: var(--rosa-pastel); margin: 12px 0; 
+  padding: 16px; border-radius: 18px;
+  display: flex; justify-content: space-between; align-items: center;
+  border: 2px solid var(--rosa-claro);
 }
 .btn-carrito { 
-  background: linear-gradient(135deg, #ff66b3, #ff3399); 
-  color: white; border: none; padding: 10px 20px; 
-  border-radius: 18px; cursor: pointer; font-weight: 700;
-  transition: 0.3s; box-shadow: 0 4px 10px rgba(255, 51, 153, 0.3);
+  background: var(--rosa); color: white; border: none;
+  padding: 10px 22px; border-radius: 15px; font-weight: 700;
+  cursor: pointer; transition: 0.3s;
 }
-.btn-carrito:hover { transform: scale(1.05); }
+.btn-carrito:hover { background: #E91E63; transform: scale(1.05); }
 
-/* WHATSAPP */
+/* CARRITO Y WHATSAPP */
+.carrito-flotante { 
+  position: fixed; top: 20px; right: 20px; 
+  background: var(--rosa); color: white; 
+  padding: 14px 22px; border-radius: 25px; 
+  font-weight: 900; z-index: 999; border: none;
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+}
 .whatsapp-btn { 
   position: fixed; bottom: 20px; right: 20px; 
-  background: linear-gradient(135deg, #25D366, #1ebe5b); 
-  color: white; font-size: 32px; 
-  width: 60px; height: 60px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 50%; text-decoration: none; 
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); 
-  animation: pulse 2s infinite; z-index: 998;
+  background: #25D366; width: 60px; height: 60px;
+  border-radius: 50%; display: flex; align-items: center; 
+  justify-content: center; font-size: 32px; color: white;
+  text-decoration: none; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 footer { 
+  background: var(--rosa); color: white; 
   text-align: center; padding: 30px 20px; 
-  background: linear-gradient(90deg, #ff66b3, #ff99cc); 
-  color: white; margin-top: 30px; 
-  border-top: 5px solid #ff3399; font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .logo-side { width: 50px; height: 50px; }
-  .banner-fotos img { width: 90px; height: 90px; }
-  .producto { flex-direction: column; gap: 10px; text-align: center; }
+  margin-top: 40px; border-radius: 40px 40px 0 0;
 }
