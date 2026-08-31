@@ -1,76 +1,105 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andreitaap Ventas - Hello Kitty</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="header-logos">
-      <img src="logo1.png" alt="Logo 1" class="logo-side">
-      <img src="logo.png" alt="Logo Principal" class="logo-center">
-      <img src="logo2.png" alt="Logo 2" class="logo-side">
-    </div>
-    <div class="bow">🎀</div>
-    <h1>Andreitaap Ventas</h1>
-    <p>Caligrafía & Bots | Dulzura y calidad 24/7</p>
-  </header>
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: #ffe6f0;
+  color: #d63384;
+}
 
-  <div class="container">
-    
-    <h2>🎀 CALIGRÁFICO SIMPLE</h2>
-    <div class="precio-grid">
-      <div class="precio-card"><b>1</b> por $20 🇲🇽 - $5.500 🇨🇴 - $3.00 🇵🇪 - 100 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>3</b> por $50 🇲🇽 - $13.500 🇨🇴 - $10.00 🇵🇪 - 300 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>5</b> por $85 🇲🇽 - $18.500 🇨🇴 - $17.00 🇵🇪 - 400 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-    </div>
+header {
+  background: #ff99cc;
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 8px dotted white;
+}
 
-    <h2>🎀 CALIGRÁFICO + OBJETO</h2>
-    <div class="precio-grid">
-      <div class="precio-card"><b>1</b> por $30 🇲🇽 - $7.500 🇨🇴 - $10.00 🇵🇪 - 200 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>3</b> por $80 🇲🇽 - $16.500 🇨🇴 - $16.00 🇵🇪 - 400 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>5</b> por $130 🇲🇽 - $26.500 🇨🇴 - $26.00 🇵🇪 - 700 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-    </div>
+.header-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
 
-    <h2>🎀 CALIGRÁFICO TEMÁTICO</h2>
-    <div class="precio-grid">
-      <div class="precio-card"><b>1</b> por $40 🇲🇽 - $9.000 🇨🇴 - $8.00 🇵🇪 - 200 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>3</b> por $100 🇲🇽 - $24.500 🇨🇴 - $20.00 🇵🇪 - 500 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>5</b> por $170 🇲🇽 - $33.500 🇨🇴 - $34.00 🇵🇪 - 800 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-    </div>
+.logo-center {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background: white;
+  padding: 5px;
+}
 
-    <h2>🤖 BOTS MENSUALES</h2>
-    <div class="precio-grid">
-      <div class="precio-card"><b>1</b> por $40 🇲🇽 - $8.500 🇨🇴 - $8.00 🇵🇪 - 200 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>2</b> por $70 🇲🇽 - $14.500 🇨🇴 - $14.00 🇵🇪 - 500 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>3</b> por $100 🇲🇽 - $25.000 🇨🇴 - $21.00 🇵🇪 - 700 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-    </div>
+.logo-side {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
 
-    <h2>🤖 BOTS PERMANENTES</h2>
-    <div class="precio-grid">
-      <div class="precio-card"><b>1</b> por $100 🇲🇽 - $25.000 🇨🇴 - $21.00 🇵🇪 - 600 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>2</b> por $180 🇲🇽 - $34.500 🇨🇴 - $36.00 🇵🇪 - 1.000 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-      <div class="precio-card"><b>3</b> por $260 🇲🇽 - $49.500 🇨🇴 - $52.00 🇵🇪 - 2.000 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
-    </div>
+.bow { font-size: 2.5rem; }
+header h1 { margin: 10px 0 5px; font-size: 2rem; }
+header p { margin: 0; color: white; }
 
-    <p class="nota">*Más grupos y más tiempo se cotiza*</p>
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+}
 
-    <h2>💳 MÉTODOS DE PAGO</h2>
-    <div class="pagos">
-      <span>Nequi</span><span>Bancolombia</span><span>Transferencia MX</span>
-      <span>Diamantes</span><span>Yape</span><span>PrexPex</span>
-    </div>
+h2 {
+  text-align: center;
+  color: #ff3399;
+  margin-top: 40px;
+}
 
-  </div>
+.precio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
 
-  <footer>
-    <p><b>Andreitaap Ventas</b></p>
-    <p>Contacto: +57 321 5829404</p>
-    <p>Hecho con amor © 2026 🎀</p>
-  </footer>
+.precio-card {
+  background: #fff0f5;
+  border: 2px dashed #ff99cc;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.2);
+  transition: transform 0.2s;
+}
+.precio-card:hover { transform: scale(1.03); }
 
-  <script src="script.js"></script>
-</body>
-</html>
+.btn-whatsapp {
+  display: block;
+  margin-top: 10px;
+  background: #25D366;
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.pagos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.pagos span {
+  background: white;
+  border: 2px solid #ffb3d9;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.nota { text-align: center; font-style: italic; }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ff99cc;
+  color: white;
+  margin-top: 40px;
+}
