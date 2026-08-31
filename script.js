@@ -16,10 +16,10 @@ function actualizarPrecios() {
     if(pais === 'DIAMANTES') valor = precio.dataset.d;
 
     if(pais === 'DIAMANTES') {
-      precio.textContent = 'Cotizar';
+      precio.textContent = 'Cotizar'; // SIEMPRE COTIZAR EN DIAMANTES
     }
     else if(valor == 0 && (pais === 'CO' || pais === 'PE')) {
-      precio.textContent = 'Cotizar';
+      precio.textContent = 'Cotizar'; // SI ES 0 EN CO O PE = COTIZAR
     }
     else {
       precio.textContent = `${simbolo}${valor}`;
@@ -57,20 +57,12 @@ function actualizarCarrito() {
     listaCarrito.innerHTML = '<p style="text-align:center; color:#999; padding:20px;">Tu carrito está vacío 💗</p>';
   } else {
     carrito.forEach((item, index) => {
-      listaCarrito.innerHTML += `
-        <div class="item-carrito">
-          <span>🎀 ${item}</span>
-          <button onclick="eliminarItem(${index})" style="background:#ff3399; color:white; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-weight:700;">X</button>
-        </div>`;
+      listaCarrito.innerHTML += `<div class="item-carrito" style="display:flex; justify-content:space-between; align-items:center; margin:10px 0; padding:10px; background:#fff0f5; border-radius:10px;"><span>🎀 ${item}</span><button onclick="eliminarItem(${index})" style="background:#ff3399; color:white; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-weight:700;">X</button></div>`;
     });
   }
 }
 
-function eliminarItem(index) {
-  carrito.splice(index, 1);
-  actualizarCarrito();
-}
-
+function eliminarItem(index) { carrito.splice(index, 1); actualizarCarrito(); }
 btnVerCarrito.addEventListener('click', () => { ventanaCarrito.style.display = 'flex'; });
 cerrarCarrito.addEventListener('click', () => { ventanaCarrito.style.display = 'none'; });
 ventanaCarrito.addEventListener('click', (e) => { if(e.target === ventanaCarrito) ventanaCarrito.style.display = 'none'; });
@@ -80,7 +72,7 @@ btnEnviar.addEventListener('click', () => {
   let lista = '';
   carrito.forEach(item => { lista += `🎀 ${item}%0A`; });
   let pais = selectorPais.options[selectorPais.selectedIndex].text;
-  let mensaje = `*🌸 HOLA ANDREITAP 🌸*%0A%0A*Quiero hacer este pedido:*%0A%0A${lista}%0A*📍 País:* ${pais}%0A*🛒 Total:* ${carrito.length} productos%0A%0A*Método de pago:* Nequi / Bancolombia / Transferencia MX / Diamantes / Soles%0A%0A¡Gracias! ☁️💗`;
+  let mensaje = `*🌸 HOLA ANDREITAP 🌸*%0A%0A*Quiero hacer este pedido:*%0A%0A${lista}%0A*📍 País:* ${pais}%0A*🛒 Total:* ${carrito.length} productos%0A%0A*Métodos de pago:* Nequi • Bancolombia • Transferencia MX • Diamantes • Yape • PrexPex%0A%0A¡Gracias! ☁️💗`;
   window.open(`https://wa.me/573215829404?text=${mensaje}`, '_blank');
 });
 
