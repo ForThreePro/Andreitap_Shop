@@ -17,12 +17,13 @@ function actualizarPrecios() {
     if(pais === 'PE') valor = precio.dataset.pe;
     if(pais === 'DIAMANTES') valor = precio.dataset.d;
 
-    // REGLA: Si es 0 en CO, PE o DIAMANTES = COTIZAR
-    if(valor == 0 && (pais === 'CO' || pais === 'PE' || pais === 'DIAMANTES')) {
+    // NUEVA REGLA: Si elige DIAMANTES = SIEMPRE COTIZAR
+    if(pais === 'DIAMANTES') {
       precio.textContent = 'Cotizar';
     }
-    else if(pais === 'DIAMANTES') {
-      precio.textContent = `${valor} 💎`;
+    // Si elige CO o PE y es 0 = COTIZAR
+    else if(valor == 0 && (pais === 'CO' || pais === 'PE')) {
+      precio.textContent = 'Cotizar';
     }
     else {
       precio.textContent = `${simbolo}${valor}`;
