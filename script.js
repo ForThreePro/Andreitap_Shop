@@ -17,11 +17,14 @@ function actualizarPrecios() {
     if(pais === 'PE') valor = precio.dataset.pe;
     if(pais === 'DIAMANTES') valor = precio.dataset.d;
 
-    if(valor == 0 && (pais === 'CO' || pais === 'PE')) {
+    // REGLA: Si es 0 en CO, PE o DIAMANTES = COTIZAR
+    if(valor == 0 && (pais === 'CO' || pais === 'PE' || pais === 'DIAMANTES')) {
       precio.textContent = 'Cotizar';
-    } else if(pais === 'DIAMANTES') {
+    }
+    else if(pais === 'DIAMANTES') {
       precio.textContent = `${valor} 💎`;
-    } else {
+    }
+    else {
       precio.textContent = `${simbolo}${valor}`;
     }
   });
@@ -29,7 +32,7 @@ function actualizarPrecios() {
 selectorPais.addEventListener('change', actualizarPrecios);
 actualizarPrecios();
 
-// 2. CARRITO FUNCIONAL - AGRUPA PRODUCTOS
+// 2. CARRITO FUNCIONAL
 let carrito = [];
 const contadorCarrito = document.getElementById('contador-carrito');
 const totalItems = document.getElementById('total-items');
@@ -43,22 +46,15 @@ const btnEnviar = document.getElementById('enviar-whatsapp');
 botonesCarrito.forEach(btn => {
   btn.addEventListener('click', () => {
     const nombre = btn.dataset.nombre;
-
-    // Si ya existe, suma 1. Si no, lo agrega
     const existe = carrito.find(item => item.nombre === nombre);
     if(existe){
       existe.cantidad++;
     } else {
       carrito.push({nombre: nombre, cantidad: 1});
     }
-
     actualizarCarrito();
     btn.textContent = '✓ Añadido';
-    btn.style.background = '#E91E63';
-    setTimeout(() => {
-      btn.textContent = 'Añadir';
-      btn.style.background = '#FF69B4';
-    }, 800);
+    setTimeout(() => { btn.textContent = 'Añadir'; }, 800);
   });
 });
 
@@ -67,7 +63,6 @@ function actualizarCarrito() {
   contadorCarrito.textContent = total;
   totalItems.textContent = total;
   listaCarrito.innerHTML = '';
-
   if(carrito.length === 0){
     listaCarrito.innerHTML = '<p style="text-align:center; color:#999; padding:20px;">Tu carrito está vacío 💗</p>';
   } else {
@@ -90,22 +85,12 @@ function eliminarItem(index) {
   actualizarCarrito();
 }
 
-btnVerCarrito.addEventListener('click', () => {
-  ventanaCarrito.style.display = 'flex';
-});
-cerrarCarrito.addEventListener('click', () => {
-  ventanaCarrito.style.display = 'none';
-});
-// Cerrar al dar click afuera
-ventanaCarrito.addEventListener('click', (e) => {
-  if(e.target === ventanaCarrito) ventanaCarrito.style.display = 'none';
-});
+btnVerCarrito.addEventListener('click', () => { ventanaCarrito.style.display = 'flex'; });
+cerrarCarrito.addEventListener('click', () => { ventanaCarrito.style.display = 'none'; });
+ventanaCarrito.addEventListener('click', (e) => { if(e.target === ventanaCarrito) ventanaCarrito.style.display = 'none'; });
 
 btnEnviar.addEventListener('click', () => {
-  if(carrito.length === 0){
-    alert('Tu carrito está vacío 💗');
-    return;
-  }
+  if(carrito.length === 0){ alert('Tu carrito está vacío 💗'); return; }
   let lista = carrito.map(item => `${item.nombre} x${item.cantidad}`).join('%0A');
   let mensaje = `Hola Andreitap! Quiero comprar:%0A%0A${lista}%0A%0APaís: ${selectorPais.options[selectorPais.selectedIndex].text}`;
   window.open(`https://wa.me/573215829404?text=${mensaje}`, '_blank');
@@ -119,21 +104,14 @@ botonesCat.forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     const target = btn.getAttribute('href').substring(1);
-
-    // Quitar activo a todos
     botonesCat.forEach(b => b.classList.remove('activa'));
     secciones.forEach(s => s.classList.remove('activo'));
-
-    // Activar el clickeado
     btn.classList.add('activa');
     document.getElementById(target).classList.add('activo');
-
-    // Scroll suave
     document.getElementById(target).scrollIntoView({behavior: 'smooth', block: 'start'});
   });
 });
 
-// Activar primera categoría al cargar
 window.addEventListener('load', () => {
   if(botonesCat.length > 0 && secciones.length > 0){
     botonesCat[0].classList.add('activa');
