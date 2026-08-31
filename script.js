@@ -17,11 +17,9 @@ function actualizarPrecios() {
     if(pais === 'PE') valor = precio.dataset.pe;
     if(pais === 'DIAMANTES') valor = precio.dataset.d;
 
-    // NUEVA REGLA: Si elige DIAMANTES = SIEMPRE COTIZAR
     if(pais === 'DIAMANTES') {
       precio.textContent = 'Cotizar';
     }
-    // Si elige CO o PE y es 0 = COTIZAR
     else if(valor == 0 && (pais === 'CO' || pais === 'PE')) {
       precio.textContent = 'Cotizar';
     }
@@ -33,7 +31,7 @@ function actualizarPrecios() {
 selectorPais.addEventListener('change', actualizarPrecios);
 actualizarPrecios();
 
-// 2. CARRITO FUNCIONAL
+// 2. CARRITO FUNCIONAL SIN CANTIDAD
 let carrito = [];
 const contadorCarrito = document.getElementById('contador-carrito');
 const totalItems = document.getElementById('total-items');
@@ -47,12 +45,7 @@ const btnEnviar = document.getElementById('enviar-whatsapp');
 botonesCarrito.forEach(btn => {
   btn.addEventListener('click', () => {
     const nombre = btn.dataset.nombre;
-    const existe = carrito.find(item => item.nombre === nombre);
-    if(existe){
-      existe.cantidad++;
-    } else {
-      carrito.push({nombre: nombre, cantidad: 1});
-    }
+    carrito.push(nombre);
     actualizarCarrito();
     btn.textContent = '✓ Añadido';
     setTimeout(() => { btn.textContent = 'Añadir'; }, 800);
@@ -60,9 +53,8 @@ botonesCarrito.forEach(btn => {
 });
 
 function actualizarCarrito() {
-  let total = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-  contadorCarrito.textContent = total;
-  totalItems.textContent = total;
+  contadorCarrito.textContent = carrito.length;
+  totalItems.textContent = carrito.length;
   listaCarrito.innerHTML = '';
   if(carrito.length === 0){
     listaCarrito.innerHTML = '<p style="text-align:center; color:#999; padding:20px;">Tu carrito está vacío 💗</p>';
@@ -70,7 +62,7 @@ function actualizarCarrito() {
     carrito.forEach((item, index) => {
       listaCarrito.innerHTML += `
         <div class="item-carrito">
-          <span>${item.nombre} x${item.cantidad}</span>
+          <span>🎀 ${item}</span>
           <button onclick="eliminarItem(${index})" style="background:#ff3399; color:white; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-weight:700;">X</button>
         </div>`;
     });
@@ -78,11 +70,7 @@ function actualizarCarrito() {
 }
 
 function eliminarItem(index) {
-  if(carrito[index].cantidad > 1){
-    carrito[index].cantidad--;
-  } else {
-    carrito.splice(index, 1);
-  }
+  carrito.splice(index, 1);
   actualizarCarrito();
 }
 
@@ -90,10 +78,24 @@ btnVerCarrito.addEventListener('click', () => { ventanaCarrito.style.display = '
 cerrarCarrito.addEventListener('click', () => { ventanaCarrito.style.display = 'none'; });
 ventanaCarrito.addEventListener('click', (e) => { if(e.target === ventanaCarrito) ventanaCarrito.style.display = 'none'; });
 
+// MENSAJE HELLO KITTY
 btnEnviar.addEventListener('click', () => {
   if(carrito.length === 0){ alert('Tu carrito está vacío 💗'); return; }
-  let lista = carrito.map(item => `${item.nombre} x${item.cantidad}`).join('%0A');
-  let mensaje = `Hola Andreitap! Quiero comprar:%0A%0A${lista}%0A%0APaís: ${selectorPais.options[selectorPais.selectedIndex].text}`;
+
+  let lista = '';
+  carrito.forEach(item => {
+    lista += `🎀 ${item}%0A`;
+  });
+
+  let pais = selectorPais.options[selectorPais.selectedIndex].text;
+  let mensaje = `*🌸 HOLA ANDREITAP 🌸*%0A%0A`;
+  mensaje += `*Quiero hacer este pedido:*%0A%0A`;
+  mensaje += `${lista}%0A`;
+  mensaje += `*📍 País:* ${pais}%0A`;
+  mensaje += `*🛒 Total de productos:* ${carrito.length}%0A%0A`;
+  mensaje += `*Método de pago:* 💎 Diamantes / Nequi / Bancolombia%0A%0A`;
+  mensaje += `¡Gracias por tu atención! ☁️💗`;
+
   window.open(`https://wa.me/573215829404?text=${mensaje}`, '_blank');
 });
 
