@@ -18,6 +18,7 @@
           <option value="DI">Diamantes 💎</option>
         </select>
       </div>
+      <button id="cartBtn" class="cart-btn">🛒 Carrito <span id="cartCount">0</span></button>
     </div>
 
     <div class="header-logos">
@@ -53,6 +54,20 @@
     <div class="pagos" id="pagos"></div>
 
   </div>
+
+  <!-- CARRITO LATERAL -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>🛒 Tu Combo</h3>
+      <button id="closeCart">X</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <button id="sendWhatsApp" class="btn-whatsapp">Crear Combo y Pedir</button>
+      <button id="clearCart" class="btn-clear">Vaciar</button>
+    </div>
+  </div>
+  <div id="cartOverlay" class="cart-overlay"></div>
 
   <footer>
     <p><b>Andreitaap Ventas</b></p>
