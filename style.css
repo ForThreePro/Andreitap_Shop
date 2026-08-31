@@ -1,36 +1,76 @@
-body { font-family: 'Poppins', sans-serif; background: #FFF0F6 url('https://www.transparenttextures.com/patterns/pink-dust.png'); margin: 0; color: #4A4A4A; }
-header { background: linear-gradient(135deg, #FFB6E6, #D8B4F8); padding: 20px; text-align: center; border-bottom: 5px dotted white; }
-.logos { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
-.logo-side { width: 70px; height: 70px; border-radius: 50%; border: 3px solid white; background: white; object-fit: cover; }
-.logo-main { width: 110px; height: 110px; border-radius: 50%; border: 5px solid white; background: white; object-fit: cover; box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
-h1 { color: white; text-shadow: 2px 2px 4px #FF4D6D; margin: 10px 0 5px 0; font-size: 22px; }
-.user { color: white; font-weight: 600; display: flex; justify-content: center; gap: 10px; align-items: center; }
-.ig-btn { background: white; color: #FF4D6D; padding: 5px 12px; border-radius: 15px; text-decoration: none; font-weight: 700; font-size: 12px; }
-.currency-selector { text-align: center; background: white; padding: 12px; border-bottom: 2px solid #FFB6E6; }
-.currency-selector b { color: #FF4D6D; }
-.currency-selector button { background: #F8F0FF; border: 2px solid #D8B4F8; padding: 8px 12px; border-radius: 15px; cursor: pointer; font-weight: 600; margin: 5px; font-size: 13px; }
-.currency-selector button.active { background: #FFB6E6; color: white; border-color: #FF4D6D; }
-.tabs { display: flex; overflow-x: auto; background: white; padding: 10px; gap: 8px; border-bottom: 3px solid #FFB6E6; }
-.tab { padding: 10px 12px; border-radius: 20px; background: #F8F0FF; border: 2px solid #D8B4F8; cursor: pointer; white-space: nowrap; font-weight: 600; font-size: 13px; }
-.tab.active { background: #FFB6E6; color: white; border-color: #FF4D6D; }
-.content { display: none; padding: 20px; }
-.content.active { display: block; }
-.producto { background: white; padding: 15px; border-radius: 20px; margin: 12px 0; box-shadow: 0 4px 10px rgba(255,182,230,0.3); border: 2px solid #FFB6E6; }
-.producto b { color: #FF4D6D; font-size: 15px; }
-.precio { font-size: 14px; margin: 5px 0; font-weight: 600; }
-.precio .mxn, .precio .cop, .precio .pen { display: none; }
-.precio .mxn.show, .precio .cop.show, .precio .pen.show { display: inline; }
-.producto button { background: #FF4D6D; color: white; border: none; padding: 8px 15px; border-radius: 15px; cursor: pointer; font-weight: 600; margin-top: 8px; }
-.nota { font-size: 12px; text-align: center; color: #888; margin: 10px 0; font-style: italic; background: #FFF3B0; padding: 8px; border-radius: 10px; }
-h4 { text-align: center; color:#FF4D6D; }
-.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 10; }
-.modal-content { background: white; padding: 20px; border-radius: 25px; width: 90%; max-width: 400px; border: 4px solid #FFB6E6; }
-.modal-content h3 { color: #FF4D6D; }
-.modal-content button { background:#FF4D6D; color:white; border:none; padding:10px 20px; border-radius:15px; font-weight:700 }
-.modal-content input { width:50px; border-radius:8px; border:1px solid #D8B4F8 }
-.close { float: right; font-size: 25px; cursor: pointer; color: #FF4D6D; }
-.cart-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 15px; border-radius: 50%; font-size: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.2); cursor: pointer; border: 3px solid white; z-index: 9; }
-.cart { display: none; position: fixed; bottom: 80px; right: 20px; width: 320px; max-height: 400px; overflow-y: auto; background: white; border-radius: 20px; padding: 15px; border: 3px solid #FFB6E6; z-index: 9; }
-.cart h3 { color:#FF4D6D; text-align:center }
-.cart button { width: 100%; background: #FF4D6D; color: white; border: none; padding: 12px; border-radius: 15px; font-weight: 700; cursor: pointer; margin-top: 10px; }
-footer { text-align: center; padding: 20px; color: #FF4D6D; font-size: 14px; background: white; border-top: 3px dotted #FFB6E6; }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andreitaap Ventas - Hello Kitty</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-logos">
+      <img src="logo1.png" alt="Logo 1" class="logo-side">
+      <img src="logo.png" alt="Logo Principal" class="logo-center">
+      <img src="logo2.png" alt="Logo 2" class="logo-side">
+    </div>
+    <div class="bow">🎀</div>
+    <h1>Andreitaap Ventas</h1>
+    <p>Caligrafía & Bots | Dulzura y calidad 24/7</p>
+  </header>
+
+  <div class="container">
+    
+    <h2>🎀 CALIGRÁFICO SIMPLE</h2>
+    <div class="precio-grid">
+      <div class="precio-card"><b>1</b> por $20 🇲🇽 - $5.500 🇨🇴 - $3.00 🇵🇪 - 100 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>3</b> por $50 🇲🇽 - $13.500 🇨🇴 - $10.00 🇵🇪 - 300 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>5</b> por $85 🇲🇽 - $18.500 🇨🇴 - $17.00 🇵🇪 - 400 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+    </div>
+
+    <h2>🎀 CALIGRÁFICO + OBJETO</h2>
+    <div class="precio-grid">
+      <div class="precio-card"><b>1</b> por $30 🇲🇽 - $7.500 🇨🇴 - $10.00 🇵🇪 - 200 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>3</b> por $80 🇲🇽 - $16.500 🇨🇴 - $16.00 🇵🇪 - 400 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>5</b> por $130 🇲🇽 - $26.500 🇨🇴 - $26.00 🇵🇪 - 700 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+    </div>
+
+    <h2>🎀 CALIGRÁFICO TEMÁTICO</h2>
+    <div class="precio-grid">
+      <div class="precio-card"><b>1</b> por $40 🇲🇽 - $9.000 🇨🇴 - $8.00 🇵🇪 - 200 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>3</b> por $100 🇲🇽 - $24.500 🇨🇴 - $20.00 🇵🇪 - 500 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>5</b> por $170 🇲🇽 - $33.500 🇨🇴 - $34.00 🇵🇪 - 800 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+    </div>
+
+    <h2>🤖 BOTS MENSUALES</h2>
+    <div class="precio-grid">
+      <div class="precio-card"><b>1</b> por $40 🇲🇽 - $8.500 🇨🇴 - $8.00 🇵🇪 - 200 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>2</b> por $70 🇲🇽 - $14.500 🇨🇴 - $14.00 🇵🇪 - 500 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>3</b> por $100 🇲🇽 - $25.000 🇨🇴 - $21.00 🇵🇪 - 700 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+    </div>
+
+    <h2>🤖 BOTS PERMANENTES</h2>
+    <div class="precio-grid">
+      <div class="precio-card"><b>1</b> por $100 🇲🇽 - $25.000 🇨🇴 - $21.00 🇵🇪 - 600 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>2</b> por $180 🇲🇽 - $34.500 🇨🇴 - $36.00 🇵🇪 - 1.000 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+      <div class="precio-card"><b>3</b> por $260 🇲🇽 - $49.500 🇨🇴 - $52.00 🇵🇪 - 2.000 💎 <a href="https://wa.me/573215829404" class="btn-whatsapp" target="_blank">Pedir</a></div>
+    </div>
+
+    <p class="nota">*Más grupos y más tiempo se cotiza*</p>
+
+    <h2>💳 MÉTODOS DE PAGO</h2>
+    <div class="pagos">
+      <span>Nequi</span><span>Bancolombia</span><span>Transferencia MX</span>
+      <span>Diamantes</span><span>Yape</span><span>PrexPex</span>
+    </div>
+
+  </div>
+
+  <footer>
+    <p><b>Andreitaap Ventas</b></p>
+    <p>Contacto: +57 321 5829404</p>
+    <p>Hecho con amor © 2026 🎀</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
