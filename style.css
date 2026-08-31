@@ -1,136 +1,41 @@
-body {
-  margin: 0;
-  font-family: 'Comic Sans MS', cursive;
-  background: #ffe6f0;
-  color: #d63384;
-}
+body { margin: 0; font-family: 'Comic Sans MS', cursive; background: #ffe6f0; color: #d63384; }
 
-.top-bar {
-  background: white;
-  padding: 10px 20px;
-  text-align: right;
-  box-shadow: 0 2px 5px rgba(255, 105, 180, 0.2);
-}
-.country-selector {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff0f5;
-  padding: 8px 15px;
-  border-radius: 20px;
-  border: 2px solid #ff99cc;
-  color: #d63384;
-  font-weight: bold;
-}
-.country-selector select {
-  border: none;
-  background: transparent;
-  font-family: 'Comic Sans MS', cursive;
-  font-size: 1rem;
-  color: #d63384;
-  outline: none;
-}
+.top-bar { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(255, 105, 180, 0.2); }
+.country-selector { display: inline-flex; align-items: center; gap: 8px; background: #fff0f5; padding: 8px 15px; border-radius: 20px; border: 2px solid #ff99cc; font-weight: bold; }
+.country-selector select { border: none; background: transparent; font-family: 'Comic Sans MS', cursive; font-size: 1rem; color: #d63384; outline: none; }
+.cart-btn { background: #ff3399; color: white; border: none; padding: 10px 15px; border-radius: 20px; font-weight: bold; cursor: pointer; }
+.cart-btn:hover { background: #e60073; }
 
-header {
-  background: #ff99cc;
-  text-align: center;
-  padding: 30px 20px;
-  border-bottom: 8px dotted white;
-}
+header { background: #ff99cc; text-align: center; padding: 30px 20px; border-bottom: 8px dotted white; }
+.header-logos { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 10px; }
+.logo-center { width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; background: white; padding: 5px; object-fit: cover; }
+.logo-side { width: 70px; height: 70px; border-radius: 50%; opacity: 0.8; object-fit: cover; }
+.bow { font-size: 2.5rem; } header h1 { margin: 10px 0 5px; font-size: 2rem; }
+#flagTitle { font-size: 1.8rem; } header p { margin: 0; color: white; }
 
-.header-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 10px;
-}
+.container { max-width: 1000px; margin: 30px auto; padding: 20px; }
+h2 { text-align: center; color: #ff3399; margin-top: 40px; }
 
-.logo-center {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid white;
-  background: white;
-  padding: 5px;
-  object-fit: cover;
-}
+.precio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 20px; }
+.precio-card { background: #fff0f5; border: 2px dashed #ff99cc; border-radius: 15px; padding: 15px; text-align: center; box-shadow: 0 3px 10px rgba(255, 105, 180, 0.2); }
+.btn-add { display: block; margin-top: 10px; background: #ff99cc; color: white; padding: 8px; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; width: 100%; }
+.btn-add:hover { background: #ff3399; }
 
-.logo-side {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  opacity: 0.8;
-  object-fit: cover;
-}
-
-.bow { font-size: 2.5rem; }
-header h1 { margin: 10px 0 5px; font-size: 2rem; }
-#flagTitle { font-size: 1.8rem; }
-header p { margin: 0; color: white; }
-
-.container {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 20px;
-}
-
-h2 {
-  text-align: center;
-  color: #ff3399;
-  margin-top: 40px;
-}
-
-.precio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.precio-card {
-  background: #fff0f5;
-  border: 2px dashed #ff99cc;
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.2);
-  transition: transform 0.2s;
-}
-.precio-card:hover { transform: scale(1.03); }
-
-.btn-whatsapp {
-  display: block;
-  margin-top: 10px;
-  background: #25D366;
-  color: white;
-  padding: 8px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.btn-whatsapp:hover { background: #1ebe57; }
-
-.pagos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-.pagos span {
-  background: white;
-  border: 2px solid #ffb3d9;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-weight: bold;
-}
-
+.pagos { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.pagos span { background: white; border: 2px solid #ffb3d9; padding: 8px 15px; border-radius: 20px; font-weight: bold; }
 .nota { text-align: center; font-style: italic; }
+footer { text-align: center; padding: 20px; background: #ff99cc; color: white; margin-top: 40px; }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #ff99cc;
-  color: white;
-  margin-top: 40px;
-}
+/* CARRITO */
+.cart-sidebar { position: fixed; top: 0; right: -400px; width: 350px; height: 100%; background: white; box-shadow: -3px 0 10px rgba(0,0,0,0.2); transition: right 0.3s; z-index: 1000; display: flex; flex-direction: column; }
+.cart-sidebar.open { right: 0; }
+.cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: none; z-index: 999; }
+.cart-overlay.show { display: block; }
+.cart-header { background: #ff99cc; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+.cart-header button { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+#cartItems { flex: 1; overflow-y: auto; padding: 15px; }
+.cart-item { border-bottom: 1px dashed #ffb3d9; padding: 10px 0; display: flex; justify-content: space-between; }
+.cart-item button { background: #ff3399; color: white; border: none; border-radius: 5px; padding: 2px 8px; cursor: pointer; }
+.cart-footer { padding: 15px; border-top: 2px solid #ffe6f0; }
+.btn-whatsapp { width: 100%; background: #25D366; color: white; padding: 12px; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; margin-bottom: 10px; }
+.btn-clear { width: 100%; background: #ccc; color: #333; padding: 10px; border-radius: 10px; border: none; cursor: pointer; }
