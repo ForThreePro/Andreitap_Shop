@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andreitaap Ventas - Hello Kitty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,62 +19,61 @@
           <option value="DI">Diamantes 💎</option>
         </select>
       </div>
+      <button id="comboBtn" class="cart-btn" style="background:#ff99cc">🎁 Crear Combo</button>
       <button id="cartBtn" class="cart-btn">🛒 Carrito <span id="cartCount">0</span></button>
-    </div>
-
-    <div class="header-logos">
-      <img src="logo1.png" alt="Logo 1" class="logo-side">
-      <img src="logo.png" alt="Logo Principal" class="logo-center">
-      <img src="logo2.png" alt="Logo 2" class="logo-side">
     </div>
     <div class="bow">🎀</div>
     <h1>Andreitaap Ventas <span id="flagTitle">🇲🇽</span></h1>
-    <p>Caligrafía & Bots | Dulzura y calidad 24/7</p>
   </header>
 
   <div class="container">
+    <div id="section-ambos">
+      <h2>🎀 CALIGRÁFICO SIMPLE</h2><div class="precio-grid" id="simple"></div>
+      <h2>🎀 CALIGRÁFICO MÁS OBJETO</h2><div class="precio-grid" id="objeto"></div>
+      <h2>🎀 CALIGRÁFICO TEMÁTICO</h2><div class="precio-grid" id="tematico"></div>
+      <h2>🤖 BOTS MENSUALES</h2><div class="precio-grid" id="bots-mensual"></div>
+      <h2>🤖 BOTS PERMANENTES</h2><div class="precio-grid" id="bots-perma"></div>
+      <p class="nota">*Más grupos y más tiempo se cotiza*</p>
+    </div>
 
-    <h2>🎀 CALIGRÁFICO SIMPLE</h2>
-    <div class="precio-grid" id="simple"></div>
+    <div id="section-di">
+      <h2>☁️✨ RECARGAS DE UNA VEZ POR ID ✨☁️</h2>
+      <p class="nota">*_PRIMERO SE REVISA EL ID PARA VER SI CUENTA CON PROMOCIÓN_*</p>
+      <div class="precio-grid" id="recargas"></div>
+      <h2>🎀 PAQUETES INDIVIDUALES 🎀</h2><div class="precio-grid" id="paquetes"></div>
+      <h2>🔥 OTROS PRODUCTOS</h2><div class="precio-grid" id="otros"></div>
+    </div>
 
-    <h2>🎀 CALIGRÁFICO + OBJETO</h2>
-    <div class="precio-grid" id="objeto"></div>
-
-    <h2>🎀 CALIGRÁFICO TEMÁTICO</h2>
-    <div class="precio-grid" id="tematico"></div>
-
-    <h2>🤖 BOTS MENSUALES</h2>
-    <div class="precio-grid" id="bots-mensual"></div>
-
-    <h2>🤖 BOTS PERMANENTES</h2>
-    <div class="precio-grid" id="bots-perma"></div>
-
-    <p class="nota">*Más grupos y más tiempo se cotiza*</p>
+    <div id="section-mx">
+      <h2>✨☁️ DISPONIBILIDAD ☁️✨</h2><div class="precio-grid" id="streaming"></div>
+      <h2>📂 DOCUMENTOS 📑💗</h2><div class="precio-grid" id="documentos"></div>
+    </div>
 
     <h2>💳 MÉTODOS DE PAGO</h2>
     <div class="pagos" id="pagos"></div>
-
+    <p class="nota-final">💗☁️ ¡Gracias por tu preferencia! ☁️💗</p>
   </div>
 
-  <!-- CARRITO LATERAL -->
-  <div id="cartSidebar" class="cart-sidebar">
-    <div class="cart-header">
-      <h3>🛒 Tu Combo</h3>
-      <button id="closeCart">X</button>
+  <div id="comboModal" class="modal">
+    <div class="modal-content">
+      <span id="closeCombo" class="close">&times;</span>
+      <h3>🎀 Crear tu Combo</h3><p>Selecciona 2 o más productos</p>
+      <div id="comboProducts"></div>
+      <button id="addComboBtn" class="btn-add-combo">Añadir Combo al Carrito</button>
     </div>
+  </div>
+
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header"><h3>🛒 Tu Combo</h3><button id="closeCart">X</button></div>
     <div id="cartItems"></div>
     <div class="cart-footer">
-      <button id="sendWhatsApp" class="btn-whatsapp">Crear Combo y Pedir</button>
-      <button id="clearCart" class="btn-clear">Vaciar</button>
+      <div class="cart-total">Total: <span id="cartTotal">$0</span></div>
+      <div id="paymentMethods"></div>
+      <button id="sendWhatsApp" class="btn-whatsapp">Pedir por WhatsApp</button>
+      <button id="clearCart" class="btn-clear">Vaciar Carrito</button>
     </div>
   </div>
   <div id="cartOverlay" class="cart-overlay"></div>
-
-  <footer>
-    <p><b>Andreitaap Ventas</b></p>
-    <p>Contacto: +57 321 5829404</p>
-    <p>Hecho con amor © 2026 🎀</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
