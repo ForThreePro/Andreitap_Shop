@@ -1,4 +1,3 @@
-// 1. SELECTOR DE PAIS
 const selectorPais = document.getElementById('pais');
 const tituloPais = document.getElementById('titulo-pais');
 const precios = document.querySelectorAll('.precio');
@@ -7,7 +6,6 @@ function actualizarPrecios() {
   const pais = selectorPais.value;
   const simbolo = selectorPais.options[selectorPais.selectedIndex].dataset.simbolo;
   const nombrePais = selectorPais.options[selectorPais.selectedIndex].text;
-
   tituloPais.textContent = `Precios para ${nombrePais}`;
 
   precios.forEach(precio => {
@@ -31,7 +29,6 @@ function actualizarPrecios() {
 selectorPais.addEventListener('change', actualizarPrecios);
 actualizarPrecios();
 
-// 2. CARRITO FUNCIONAL SIN CANTIDAD
 let carrito = [];
 const contadorCarrito = document.getElementById('contador-carrito');
 const totalItems = document.getElementById('total-items');
@@ -78,31 +75,17 @@ btnVerCarrito.addEventListener('click', () => { ventanaCarrito.style.display = '
 cerrarCarrito.addEventListener('click', () => { ventanaCarrito.style.display = 'none'; });
 ventanaCarrito.addEventListener('click', (e) => { if(e.target === ventanaCarrito) ventanaCarrito.style.display = 'none'; });
 
-// MENSAJE HELLO KITTY
 btnEnviar.addEventListener('click', () => {
   if(carrito.length === 0){ alert('Tu carrito está vacío 💗'); return; }
-
   let lista = '';
-  carrito.forEach(item => {
-    lista += `🎀 ${item}%0A`;
-  });
-
+  carrito.forEach(item => { lista += `🎀 ${item}%0A`; });
   let pais = selectorPais.options[selectorPais.selectedIndex].text;
-  let mensaje = `*🌸 HOLA ANDREITAP 🌸*%0A%0A`;
-  mensaje += `*Quiero hacer este pedido:*%0A%0A`;
-  mensaje += `${lista}%0A`;
-  mensaje += `*📍 País:* ${pais}%0A`;
-  mensaje += `*🛒 Total de productos:* ${carrito.length}%0A%0A`;
-  mensaje += `*Método de pago:* 💎 Diamantes / Nequi / Bancolombia%0A%0A`;
-  mensaje += `¡Gracias por tu atención! ☁️💗`;
-
+  let mensaje = `*🌸 HOLA ANDREITAP 🌸*%0A%0A*Quiero hacer este pedido:*%0A%0A${lista}%0A*📍 País:* ${pais}%0A*🛒 Total:* ${carrito.length} productos%0A%0A*Método de pago:* Nequi / Bancolombia / Transferencia MX / Diamantes / Soles%0A%0A¡Gracias! ☁️💗`;
   window.open(`https://wa.me/573215829404?text=${mensaje}`, '_blank');
 });
 
-// 3. PESTAÑAS DE CATEGORIAS
 const botonesCat = document.querySelectorAll('.cat');
 const secciones = document.querySelectorAll('.precios');
-
 botonesCat.forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -114,7 +97,6 @@ botonesCat.forEach(btn => {
     document.getElementById(target).scrollIntoView({behavior: 'smooth', block: 'start'});
   });
 });
-
 window.addEventListener('load', () => {
   if(botonesCat.length > 0 && secciones.length > 0){
     botonesCat[0].classList.add('activa');
