@@ -2,28 +2,25 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andreitap Shop 💗✨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Andreitap Shop 💗</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="bg-animation"></div>
-  <div class="hearts"></div>
 
   <header class="glass">
     <div class="logo-container">
-      <img src="logo2.png" alt="Logo Izq" class="logo-float">
+      <img src="logo.png" alt="Logo" class="logo-glow">
       <div class="brand">
-        <img src="logo.png" alt="Logo Principal" class="logo-glow">
         <h1>Andreitap Shop</h1>
         <p class="subtitle">✨ Tienda Premium Hello Kitty ✨</p>
       </div>
-      <img src="logo1.png" alt="Logo Der" class="logo-float">
     </div>
     <nav>
       <a href="#simple">Simple</a>
-      <a href="#objeto">+ Objeto</a>
+      <a href="#objeto">Objeto</a>
       <a href="#tematico">Temático</a>
       <a href="#bots">Bots</a>
     </nav>
@@ -38,13 +35,14 @@
           <div class="badge">POPULAR</div>
           <h3>1 por</h3>
           <div class="price-selector">
-            <select id="simple1">
-              <option value="MX-20">🇲🇽 México $20</option>
-              <option value="CO-5500">🇨🇴 Colombia $5.500</option>
-              <option value="PE-3">🇵🇪 Perú $3.00</option>
-              <option value="DM-100">💎 100 Diamantes</option>
+            <select id="simple1" onchange="updatePago(this)">
+              <option data-pago="Transferencia MX" value="MX-20">🇲🇽 México $20</option>
+              <option data-pago="Nequi / Bancolombia" value="CO-5500">🇨🇴 Colombia $5.500</option>
+              <option data-pago="Soles / Yape / Plin" value="PE-3">🇵🇪 Perú $3.00</option>
+              <option data-pago="Diamantes" value="DM-100">💎 100 Diamantes</option>
             </select>
           </div>
+          <p class="pago-info" id="pago-simple1">💳 Método: Transferencia MX</p>
           <button class="btn-buy" onclick="comprar('Caligráfico Simple x1', 'simple1')">
             <span>🛒 Comprar Ahora</span>
           </button>
@@ -53,13 +51,14 @@
         <div class="product glass-card">
           <h3>3 por</h3>
           <div class="price-selector">
-            <select id="simple3">
-              <option value="MX-50">🇲🇽 México $50</option>
-              <option value="CO-13500">🇨🇴 Colombia $13.500</option>
-              <option value="PE-10">🇵🇪 Perú $10.00</option>
-              <option value="DM-300">💎 300 Diamantes</option>
+            <select id="simple3" onchange="updatePago(this)">
+              <option data-pago="Transferencia MX" value="MX-50">🇲🇽 México $50</option>
+              <option data-pago="Nequi / Bancolombia" value="CO-13500">🇨🇴 Colombia $13.500</option>
+              <option data-pago="Soles / Yape / Plin" value="PE-10">🇵🇪 Perú $10.00</option>
+              <option data-pago="Diamantes" value="DM-300">💎 300 Diamantes</option>
             </select>
           </div>
+          <p class="pago-info" id="pago-simple3">💳 Método: Transferencia MX</p>
           <button class="btn-buy" onclick="comprar('Caligráfico Simple x3', 'simple3')">
             <span>🛒 Comprar Ahora</span>
           </button>
@@ -69,13 +68,14 @@
           <div class="badge save">AHORRA 15%</div>
           <h3>5 por</h3>
           <div class="price-selector">
-            <select id="simple5">
-              <option value="MX-85">🇲🇽 México $85</option>
-              <option value="CO-18500">🇨🇴 Colombia $18.500</option>
-              <option value="PE-17">🇵🇪 Perú $17.00</option>
-              <option value="DM-400">💎 400 Diamantes</option>
+            <select id="simple5" onchange="updatePago(this)">
+              <option data-pago="Transferencia MX" value="MX-85">🇲🇽 México $85</option>
+              <option data-pago="Nequi / Bancolombia" value="CO-18500">🇨🇴 Colombia $18.500</option>
+              <option data-pago="Soles / Yape / Plin" value="PE-17">🇵🇪 Perú $17.00</option>
+              <option data-pago="Diamantes" value="DM-400">💎 400 Diamantes</option>
             </select>
           </div>
+          <p class="pago-info" id="pago-simple5">💳 Método: Transferencia MX</p>
           <button class="btn-buy" onclick="comprar('Caligráfico Simple x5', 'simple5')">
             <span>🛒 Comprar Ahora</span>
           </button>
@@ -85,52 +85,49 @@
 
     <!-- CALIGRAFICO MAS OBJETO -->
     <section id="objeto" class="category">
-      <h2 class="section-title">🎀 CALIGRÁFICO MÁS OBJETO</h2>
+      <h2 class="section-title">🎀 CALIGRÁFICO + OBJETO</h2>
       <div class="products-grid">
         <div class="product glass-card">
           <h3>1 por</h3>
           <div class="price-selector">
-            <select id="obj1">
-              <option value="MX-30">🇲🇽 México $30</option>
-              <option value="CO-7500">🇨🇴 Colombia $7.500</option>
-              <option value="PE-10">🇵🇪 Perú $10.00</option>
-              <option value="DM-200">💎 200 Diamantes</option>
+            <select id="obj1" onchange="updatePago(this)">
+              <option data-pago="Transferencia MX" value="MX-30">🇲🇽 México $30</option>
+              <option data-pago="Nequi / Bancolombia" value="CO-7500">🇨🇴 Colombia $7.500</option>
+              <option data-pago="Soles / Yape / Plin" value="PE-10">🇵🇪 Perú $10.00</option>
+              <option data-pago="Diamantes" value="DM-200">💎 200 Diamantes</option>
             </select>
           </div>
-          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x1', 'obj1')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
+          <p class="pago-info" id="pago-obj1">💳 Método: Transferencia MX</p>
+          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x1', 'obj1')"><span>🛒 Comprar Ahora</span></button>
         </div>
 
         <div class="product glass-card">
           <h3>3 por</h3>
           <div class="price-selector">
-            <select id="obj3">
-              <option value="MX-80">🇲🇽 México $80</option>
-              <option value="CO-16500">🇨🇴 Colombia $16.500</option>
-              <option value="PE-16">🇵🇪 Perú $16.00</option>
-              <option value="DM-400">💎 400 Diamantes</option>
+            <select id="obj3" onchange="updatePago(this)">
+              <option data-pago="Transferencia MX" value="MX-80">🇲🇽 México $80</option>
+              <option data-pago="Nequi / Bancolombia" value="CO-16500">🇨🇴 Colombia $16.500</option>
+              <option data-pago="Soles / Yape / Plin" value="PE-16">🇵🇪 Perú $16.00</option>
+              <option data-pago="Diamantes" value="DM-400">💎 400 Diamantes</option>
             </select>
           </div>
-          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x3', 'obj3')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
+          <p class="pago-info" id="pago-obj3">💳 Método: Transferencia MX</p>
+          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x3', 'obj3')"><span>🛒 Comprar Ahora</span></button>
         </div>
 
         <div class="product glass-card">
           <div class="badge save">AHORRA 20%</div>
           <h3>5 por</h3>
           <div class="price-selector">
-            <select id="obj5">
-              <option value="MX-130">🇲🇽 México $130</option>
-              <option value="CO-26500">🇨🇴 Colombia $26.500</option>
-              <option value="PE-26">🇵🇪 Perú $26.00</option>
-              <option value="DM-700">💎 700 Diamantes</option>
+            <select id="obj5" onchange="updatePago(this)">
+              <option data-pago="Transferencia MX" value="MX-130">🇲🇽 México $130</option>
+              <option data-pago="Nequi / Bancolombia" value="CO-26500">🇨🇴 Colombia $26.500</option>
+              <option data-pago="Soles / Yape / Plin" value="PE-26">🇵🇪 Perú $26.00</option>
+              <option data-pago="Diamantes" value="DM-700">💎 700 Diamantes</option>
             </select>
           </div>
-          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x5', 'obj5')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
+          <p class="pago-info" id="pago-obj5">💳 Método: Transferencia MX</p>
+          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x5', 'obj5')"><span>🛒 Comprar Ahora</span></button>
         </div>
       </div>
     </section>
@@ -139,52 +136,9 @@
     <section id="tematico" class="category">
       <h2 class="section-title">💖 CALIGRÁFICO TEMÁTICO</h2>
       <div class="products-grid">
-        <div class="product glass-card">
-          <h3>1 por</h3>
-          <div class="price-selector">
-            <select id="tem1">
-              <option value="MX-40">🇲🇽 México $40</option>
-              <option value="CO-9000">🇨🇴 Colombia $9.000</option>
-              <option value="PE-8">🇵🇪 Perú $8.00</option>
-              <option value="DM-200">💎 200 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Caligráfico Temático x1', 'tem1')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
-
-        <div class="product glass-card">
-          <div class="badge">TOP VENTAS</div>
-          <h3>3 por</h3>
-          <div class="price-selector">
-            <select id="tem3">
-              <option value="MX-100">🇲🇽 México $100</option>
-              <option value="CO-24500">🇨🇴 Colombia $24.500</option>
-              <option value="PE-20">🇵🇪 Perú $20.00</option>
-              <option value="DM-500">💎 500 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Caligráfico Temático x3', 'tem3')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
-
-        <div class="product glass-card">
-          <div class="badge save">AHORRA 25%</div>
-          <h3>5 por</h3>
-          <div class="price-selector">
-            <select id="tem5">
-              <option value="MX-170">🇲🇽 México $170</option>
-              <option value="CO-33500">🇨🇴 Colombia $33.500</option>
-              <option value="PE-34">🇵🇪 Perú $34.00</option>
-              <option value="DM-800">💎 800 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Caligráfico Temático x5', 'tem5')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
+        <div class="product glass-card"><h3>1 por</h3><div class="price-selector"><select id="tem1" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-40">🇲🇽 México $40</option><option data-pago="Nequi / Bancolombia" value="CO-9000">🇨🇴 Colombia $9.000</option><option data-pago="Soles / Yape / Plin" value="PE-8">🇵🇪 Perú $8.00</option><option data-pago="Diamantes" value="DM-200">💎 200 Diamantes</option></select></div><p class="pago-info" id="pago-tem1">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Caligráfico Temático x1', 'tem1')"><span>🛒 Comprar Ahora</span></button></div>
+        <div class="product glass-card"><div class="badge">TOP VENTAS</div><h3>3 por</h3><div class="price-selector"><select id="tem3" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-100">🇲🇽 México $100</option><option data-pago="Nequi / Bancolombia" value="CO-24500">🇨🇴 Colombia $24.500</option><option data-pago="Soles / Yape / Plin" value="PE-20">🇵🇪 Perú $20.00</option><option data-pago="Diamantes" value="DM-500">💎 500 Diamantes</option></select></div><p class="pago-info" id="pago-tem3">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Caligráfico Temático x3', 'tem3')"><span>🛒 Comprar Ahora</span></button></div>
+        <div class="product glass-card"><div class="badge save">AHORRA 25%</div><h3>5 por</h3><div class="price-selector"><select id="tem5" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-170">🇲🇽 México $170</option><option data-pago="Nequi / Bancolombia" value="CO-33500">🇨🇴 Colombia $33.500</option><option data-pago="Soles / Yape / Plin" value="PE-34">🇵🇪 Perú $34.00</option><option data-pago="Diamantes" value="DM-800">💎 800 Diamantes</option></select></div><p class="pago-info" id="pago-tem5">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Caligráfico Temático x5', 'tem5')"><span>🛒 Comprar Ahora</span></button></div>
       </div>
     </section>
 
@@ -192,51 +146,9 @@
     <section id="bots" class="category">
       <h2 class="section-title">🤖 BOTS MENSUALES</h2>
       <div class="products-grid">
-        <div class="product glass-card">
-          <h3>1 por</h3>
-          <div class="price-selector">
-            <select id="botm1">
-              <option value="MX-40">🇲🇽 México $40</option>
-              <option value="CO-8500">🇨🇴 Colombia $8.500</option>
-              <option value="PE-8">🇵🇪 Perú $8.00</option>
-              <option value="DM-200">💎 200 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Bot Mensual x1', 'botm1')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
-
-        <div class="product glass-card">
-          <h3>2 por</h3>
-          <div class="price-selector">
-            <select id="botm2">
-              <option value="MX-70">🇲🇽 México $70</option>
-              <option value="CO-14500">🇨🇴 Colombia $14.500</option>
-              <option value="PE-14">🇵🇪 Perú $14.00</option>
-              <option value="DM-500">💎 500 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Bot Mensual x2', 'botm2')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
-
-        <div class="product glass-card">
-          <div class="badge save">AHORRA 10%</div>
-          <h3>3 por</h3>
-          <div class="price-selector">
-            <select id="botm3">
-              <option value="MX-100">🇲🇽 México $100</option>
-              <option value="CO-25000">🇨🇴 Colombia $25.000</option>
-              <option value="PE-21">🇵🇪 Perú $21.00</option>
-              <option value="DM-700">💎 700 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Bot Mensual x3', 'botm3')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
+        <div class="product glass-card"><h3>1 por</h3><div class="price-selector"><select id="botm1" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-40">🇲🇽 México $40</option><option data-pago="Nequi / Bancolombia" value="CO-8500">🇨🇴 Colombia $8.500</option><option data-pago="Soles / Yape / Plin" value="PE-8">🇵🇪 Perú $8.00</option><option data-pago="Diamantes" value="DM-200">💎 200 Diamantes</option></select></div><p class="pago-info" id="pago-botm1">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Bot Mensual x1', 'botm1')"><span>🛒 Comprar Ahora</span></button></div>
+        <div class="product glass-card"><h3>2 por</h3><div class="price-selector"><select id="botm2" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-70">🇲🇽 México $70</option><option data-pago="Nequi / Bancolombia" value="CO-14500">🇨🇴 Colombia $14.500</option><option data-pago="Soles / Yape / Plin" value="PE-14">🇵🇪 Perú $14.00</option><option data-pago="Diamantes" value="DM-500">💎 500 Diamantes</option></select></div><p class="pago-info" id="pago-botm2">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Bot Mensual x2', 'botm2')"><span>🛒 Comprar Ahora</span></button></div>
+        <div class="product glass-card"><div class="badge save">AHORRA 10%</div><h3>3 por</h3><div class="price-selector"><select id="botm3" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-100">🇲🇽 México $100</option><option data-pago="Nequi / Bancolombia" value="CO-25000">🇨🇴 Colombia $25.000</option><option data-pago="Soles / Yape / Plin" value="PE-21">🇵🇪 Perú $21.00</option><option data-pago="Diamantes" value="DM-700">💎 700 Diamantes</option></select></div><p class="pago-info" id="pago-botm3">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Bot Mensual x3', 'botm3')"><span>🛒 Comprar Ahora</span></button></div>
       </div>
     </section>
 
@@ -244,56 +156,13 @@
     <section class="category">
       <h2 class="section-title">👑 BOTS PERMANENTES</h2>
       <div class="products-grid">
-        <div class="product glass-card premium">
-          <h3>1 por</h3>
-          <div class="price-selector">
-            <select id="botp1">
-              <option value="MX-100">🇲🇽 México $100</option>
-              <option value="CO-25000">🇨🇴 Colombia $25.000</option>
-              <option value="PE-21">🇵🇪 Perú $21.00</option>
-              <option value="DM-600">💎 600 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Bot Permanente x1', 'botp1')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
-
-        <div class="product glass-card premium">
-          <h3>2 por</h3>
-          <div class="price-selector">
-            <select id="botp2">
-              <option value="MX-180">🇲🇽 México $180</option>
-              <option value="CO-34500">🇨🇴 Colombia $34.500</option>
-              <option value="PE-36">🇵🇪 Perú $36.00</option>
-              <option value="DM-1000">💎 1.000 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Bot Permanente x2', 'botp2')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
-
-        <div class="product glass-card premium">
-          <div class="badge save">MEJOR PRECIO</div>
-          <h3>3 por</h3>
-          <div class="price-selector">
-            <select id="botp3">
-              <option value="MX-260">🇲🇽 México $260</option>
-              <option value="CO-49500">🇨🇴 Colombia $49.500</option>
-              <option value="PE-52">🇵🇪 Perú $52.00</option>
-              <option value="DM-2000">💎 2.000 Diamantes</option>
-            </select>
-          </div>
-          <button class="btn-buy" onclick="comprar('Bot Permanente x3', 'botp3')">
-            <span>🛒 Comprar Ahora</span>
-          </button>
-        </div>
+        <div class="product glass-card premium"><h3>1 por</h3><div class="price-selector"><select id="botp1" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-100">🇲🇽 México $100</option><option data-pago="Nequi / Bancolombia" value="CO-25000">🇨🇴 Colombia $25.000</option><option data-pago="Soles / Yape / Plin" value="PE-21">🇵🇪 Perú $21.00</option><option data-pago="Diamantes" value="DM-600">💎 600 Diamantes</option></select></div><p class="pago-info" id="pago-botp1">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Bot Permanente x1', 'botp1')"><span>🛒 Comprar Ahora</span></button></div>
+        <div class="product glass-card premium"><h3>2 por</h3><div class="price-selector"><select id="botp2" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-180">🇲🇽 México $180</option><option data-pago="Nequi / Bancolombia" value="CO-34500">🇨🇴 Colombia $34.500</option><option data-pago="Soles / Yape / Plin" value="PE-36">🇵🇪 Perú $36.00</option><option data-pago="Diamantes" value="DM-1000">💎 1.000 Diamantes</option></select></div><p class="pago-info" id="pago-botp2">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Bot Permanente x2', 'botp2')"><span>🛒 Comprar Ahora</span></button></div>
+        <div class="product glass-card premium"><div class="badge save">MEJOR PRECIO</div><h3>3 por</h3><div class="price-selector"><select id="botp3" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-260">🇲🇽 México $260</option><option data-pago="Nequi / Bancolombia" value="CO-49500">🇨🇴 Colombia $49.500</option><option data-pago="Soles / Yape / Plin" value="PE-52">🇵🇪 Perú $52.00</option><option data-pago="Diamantes" value="DM-2000">💎 2.000 Diamantes</option></select></div><p class="pago-info" id="pago-botp3">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Bot Permanente x3', 'botp3')"><span>🛒 Comprar Ahora</span></button></div>
       </div>
       <p class="note-glass">* Más grupos y más tiempo se cotiza ✨</p>
     </section>
 
-    <!-- METODOS DE PAGO -->
     <section class="payment-section glass">
       <h2>💳 MÉTODOS DE PAGO</h2>
       <div class="payment-grid">
@@ -308,7 +177,7 @@
   </main>
 
   <footer class="glass">
-    <p>© 2026 Andreitap Shop | Hecho con 💗 y Magia Hello Kitty</p>
+    <p>© 2026 Andreitap Shop | Hecho con 💗</p>
   </footer>
 
   <div id="toast" class="toast"></div>
