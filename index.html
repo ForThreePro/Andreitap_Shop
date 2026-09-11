@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Andreitap Shop 💗</title>
+  <title>Andreitap Ventas 💗</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
 </head>
@@ -14,8 +14,10 @@
     <div class="logo-container">
       <img src="logo.png" alt="Logo" class="logo-glow">
       <div class="brand">
-        <h1>Andreitap Shop</h1>
-        <p class="subtitle">✨ Tienda Premium Hello Kitty ✨</p>
+        <h1>Andreitap Ventas</h1>
+        <div class="premium-badge">
+          <span>✨ TIENDA PREMIUM HELLO KITTY ✨</span>
+        </div>
       </div>
     </div>
     <nav>
@@ -87,48 +89,9 @@
     <section id="objeto" class="category">
       <h2 class="section-title">🎀 CALIGRÁFICO + OBJETO</h2>
       <div class="products-grid">
-        <div class="product glass-card">
-          <h3>1 por</h3>
-          <div class="price-selector">
-            <select id="obj1" onchange="updatePago(this)">
-              <option data-pago="Transferencia MX" value="MX-30">🇲🇽 México $30</option>
-              <option data-pago="Nequi / Bancolombia" value="CO-7500">🇨🇴 Colombia $7.500</option>
-              <option data-pago="Soles / Yape / Plin" value="PE-10">🇵🇪 Perú $10.00</option>
-              <option data-pago="Diamantes" value="DM-200">💎 200 Diamantes</option>
-            </select>
-          </div>
-          <p class="pago-info" id="pago-obj1">💳 Método: Transferencia MX</p>
-          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x1', 'obj1')"><span>🛒 Comprar Ahora</span></button>
-        </div>
-
-        <div class="product glass-card">
-          <h3>3 por</h3>
-          <div class="price-selector">
-            <select id="obj3" onchange="updatePago(this)">
-              <option data-pago="Transferencia MX" value="MX-80">🇲🇽 México $80</option>
-              <option data-pago="Nequi / Bancolombia" value="CO-16500">🇨🇴 Colombia $16.500</option>
-              <option data-pago="Soles / Yape / Plin" value="PE-16">🇵🇪 Perú $16.00</option>
-              <option data-pago="Diamantes" value="DM-400">💎 400 Diamantes</option>
-            </select>
-          </div>
-          <p class="pago-info" id="pago-obj3">💳 Método: Transferencia MX</p>
-          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x3', 'obj3')"><span>🛒 Comprar Ahora</span></button>
-        </div>
-
-        <div class="product glass-card">
-          <div class="badge save">AHORRA 20%</div>
-          <h3>5 por</h3>
-          <div class="price-selector">
-            <select id="obj5" onchange="updatePago(this)">
-              <option data-pago="Transferencia MX" value="MX-130">🇲🇽 México $130</option>
-              <option data-pago="Nequi / Bancolombia" value="CO-26500">🇨🇴 Colombia $26.500</option>
-              <option data-pago="Soles / Yape / Plin" value="PE-26">🇵🇪 Perú $26.00</option>
-              <option data-pago="Diamantes" value="DM-700">💎 700 Diamantes</option>
-            </select>
-          </div>
-          <p class="pago-info" id="pago-obj5">💳 Método: Transferencia MX</p>
-          <button class="btn-buy" onclick="comprar('Caligráfico + Objeto x5', 'obj5')"><span>🛒 Comprar Ahora</span></button>
-        </div>
+        <div class="product glass-card"><h3>1 por</h3><div class="price-selector"><select id="obj1" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-30">🇲🇽 México $30</option><option data-pago="Nequi / Bancolombia" value="CO-7500">🇨🇴 Colombia $7.500</option><option data-pago="Soles / Yape / Plin" value="PE-10">🇵🇪 Perú $10.00</option><option data-pago="Diamantes" value="DM-200">💎 200 Diamantes</option></select></div><p class="pago-info" id="pago-obj1">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Caligráfico + Objeto x1', 'obj1')"><span>🛒 Comprar Ahora</span></button></div>
+        <div class="product glass-card"><h3>3 por</h3><div class="price-selector"><select id="obj3" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-80">🇲🇽 México $80</option><option data-pago="Nequi / Bancolombia" value="CO-16500">🇨🇴 Colombia $16.500</option><option data-pago="Soles / Yape / Plin" value="PE-16">🇵🇪 Perú $16.00</option><option data-pago="Diamantes" value="DM-400">💎 400 Diamantes</option></select></div><p class="pago-info" id="pago-obj3">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Caligráfico + Objeto x3', 'obj3')"><span>🛒 Comprar Ahora</span></button></div>
+        <div class="product glass-card"><div class="badge save">AHORRA 20%</div><h3>5 por</h3><div class="price-selector"><select id="obj5" onchange="updatePago(this)"><option data-pago="Transferencia MX" value="MX-130">🇲🇽 México $130</option><option data-pago="Nequi / Bancolombia" value="CO-26500">🇨🇴 Colombia $26.500</option><option data-pago="Soles / Yape / Plin" value="PE-26">🇵🇪 Perú $26.00</option><option data-pago="Diamantes" value="DM-700">💎 700 Diamantes</option></select></div><p class="pago-info" id="pago-obj5">💳 Método: Transferencia MX</p><button class="btn-buy" onclick="comprar('Caligráfico + Objeto x5', 'obj5')"><span>🛒 Comprar Ahora</span></button></div>
       </div>
     </section>
 
@@ -177,7 +140,7 @@
   </main>
 
   <footer class="glass">
-    <p>© 2026 Andreitap Shop | Hecho con 💗</p>
+    <p>© 2026 Andreitap Ventas | Hecho con 💗</p>
   </footer>
 
   <div id="toast" class="toast"></div>
