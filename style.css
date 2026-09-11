@@ -8,6 +8,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   background: linear-gradient(135deg, #ffe6f0 0%, #ffd6e8 100%);
   color: #5a3e4d;
+  background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="%23ffb3d9" opacity="0.3"/></svg>');
 }
 
 header {
@@ -24,6 +25,7 @@ header {
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  border: 3px solid #ff99cc;
 }
 
 .logo-main {
@@ -31,6 +33,7 @@ header {
   height: 120px;
   border-radius: 50%;
   border: 4px solid #ff99cc;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
 }
 
 .header-center {
@@ -41,11 +44,13 @@ h1 {
   font-size: 2.5rem;
   color: #ff4da6;
   margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(255, 77, 166, 0.2);
 }
 
 .subtitle {
   color: #ff66b3;
   font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .category {
@@ -89,10 +94,26 @@ h2 {
   margin-bottom: 15px;
 }
 
-.product-card p {
+.product-card select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ff99cc;
+  border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  background: #fff0f6;
+  color: #5a3e4d;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.product-card select:focus {
+  outline: none;
+  border-color: #ff3399;
+  box-shadow: 0 0 10px rgba(255, 51, 153, 0.3);
+  background: white;
 }
 
 .product-card button {
@@ -106,11 +127,13 @@ h2 {
   cursor: pointer;
   transition: all 0.3s;
   box-shadow: 0 4px 15px rgba(255, 51, 153, 0.4);
+  width: 100%;
 }
 
 .product-card button:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(255, 51, 153, 0.6);
+  background: linear-gradient(135deg, #ff3399 0%, #ff1a8b 100%);
 }
 
 .note {
@@ -118,6 +141,7 @@ h2 {
   margin-top: 20px;
   font-style: italic;
   color: #ff3399;
+  font-weight: 600;
 }
 
 .payment {
@@ -125,6 +149,7 @@ h2 {
   padding: 40px 20px;
   text-align: center;
   border-top: 4px solid #ffb3d9;
+  border-bottom: 4px solid #ffb3d9;
 }
 
 .payment-methods {
@@ -137,11 +162,18 @@ h2 {
 
 .payment-methods span {
   background: white;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 50px;
   border: 2px solid #ff99cc;
-  font-weight: 600;
+  font-weight: 700;
   color: #ff3399;
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.2);
+  transition: transform 0.2s;
+}
+
+.payment-methods span:hover {
+  transform: scale(1.05);
+  background: #ffecf5;
 }
 
 footer {
@@ -150,9 +182,12 @@ footer {
   background: #ff4da6;
   color: white;
   font-weight: 600;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
-  .logo-side { display: none; }
+ .logo-side { display: none; }
   h1 { font-size: 1.8rem; }
+ .logo-main { width: 100px; height: 100px; }
+ .products { grid-template-columns: 1fr; }
 }
