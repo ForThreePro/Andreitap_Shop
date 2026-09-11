@@ -21,7 +21,9 @@ body {
   width: 100%; height: 100%;
   background: radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.3) 0%, transparent 50%);
   z-index: -1;
+  animation: pulse 8s ease-in-out infinite;
 }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 
 .glass {
   background: var(--glass);
@@ -38,16 +40,37 @@ header {
 
 .logo-container { text-align: center; }
 .logo-glow {
-  width: 80px; height: 80px; border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 77, 166, 0.8);
-  margin-bottom: 10px;
+  width: 90px; height: 90px; border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 77, 166, 0.9);
+  margin-bottom: 12px;
+  animation: glow 2s ease-in-out infinite;
 }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 30px rgba(255, 77, 166, 0.9); } 50% { box-shadow: 0 0 50px rgba(255, 77, 166, 1); } }
+
 h1 {
   font-family: 'Pacifico', cursive;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #fff;
+  text-shadow: 0 0 20px rgba(255, 77, 166, 0.8);
 }
-.subtitle { font-size: 0.9rem; color: var(--light-pink); }
+
+/* NUEVO BADGE PREMIUM */
+.premium-badge {
+  background: linear-gradient(45deg, #ffd700, #ff4da6, #ffd700);
+  background-size: 200% 200%;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-top: 8px;
+  animation: gradientMove 3s ease infinite;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+.premium-badge span {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: 1px;
+}
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
 nav {
   display: flex;
@@ -59,27 +82,24 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
-  padding: 8px 15px;
+  font-weight: 700;
+  padding: 10px 18px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   font-size: 0.9rem;
   white-space: nowrap;
 }
+nav a:active { background: var(--pink); }
 
 .category { padding: 30px 15px; }
 .section-title {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin-bottom: 25px;
   text-shadow: 0 0 15px rgba(255, 77, 166, 0.8);
 }
 
-.products-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+.products-grid { display: flex; flex-direction: column; gap: 20px; }
 
 .glass-card {
   background: var(--glass);
@@ -90,7 +110,7 @@ nav a {
   position: relative;
 }
 .premium {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), var(--glass));
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), var(--glass));
   border-color: gold;
 }
 
@@ -99,86 +119,56 @@ nav a {
   top: -12px;
   right: 15px;
   background: var(--pink);
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255, 77, 166, 0.5);
 }
 .badge.save { background: #00ff88; color: #000; }
 
-.product h3 {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 15px;
-}
+.product h3 { font-size: 1.6rem; text-align: center; margin-bottom: 15px; }
 
 .price-selector select {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   border-radius: 12px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   background: rgba(0, 0, 0, 0.4);
   color: white;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .pago-info {
   text-align: center;
-  margin: 10px 0;
-  font-size: 0.9rem;
+  margin: 12px 0;
+  font-size: 0.95rem;
   color: #00ff88;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .btn-buy {
   width: 100%;
-  padding: 14px;
+  padding: 15px;
   border: none;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--pink), var(--dark-pink));
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 77, 166, 0.5);
+  box-shadow: 0 5px 18px rgba(255, 77, 166, 0.6);
 }
 .btn-buy:active { transform: scale(0.95); }
 
-.note-glass {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 1rem;
-  color: var(--light-pink);
-}
+.note-glass { text-align: center; margin-top: 20px; font-size: 1rem; color: var(--light-pink); font-weight: 700; }
 
-.payment-section {
-  margin: 30px 15px;
-  padding: 25px 15px;
-  border-radius: 20px;
-  text-align: center;
-}
-.payment-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 20px;
-}
-.pay-item {
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
+.payment-section { margin: 30px 15px; padding: 25px 15px; border-radius: 20px; text-align: center; }
+.payment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+.pay-item { padding: 14px; background: rgba(255, 255, 255, 0.1); border-radius: 12px; font-weight: 800; font-size: 0.95rem; }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
+footer { text-align: center; padding: 20px; margin-top: 40px; font-weight: 700; font-size: 0.9rem; }
 
 .toast {
   position: fixed;
@@ -186,9 +176,10 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   background: var(--pink);
-  padding: 15px 25px;
+  padding: 16px 28px;
   border-radius: 12px;
   display: none;
   z-index: 999;
-  font-weight: 700;
+  font-weight: 800;
+  box-shadow: 0 5px 20px rgba(255, 77, 166, 0.6);
 }
