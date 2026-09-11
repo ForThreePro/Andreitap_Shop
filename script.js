@@ -1,10 +1,9 @@
-const tuNumero = "51"; // CAMBIA ESTO POR TU NUMERO DE WHATSAPP
+const tuNumero = "573215829404"; // PON TU NUMERO DE WHATSAPP AQUI
 
-const metodos = {
-  MX: "Transferencia MX",
-  CO: "Nequi / Bancolombia",
-  PE: "Soles / Yape / Plin",
-  DM: "Diamantes"
+function updatePago(select) {
+  let pago = select.options[select.selectedIndex].getAttribute('data-pago');
+  let id = select.id;
+  document.getElementById('pago-' + id).textContent = `💳 Método: ${pago}`;
 }
 
 function comprar(producto, selectId) {
@@ -12,49 +11,30 @@ function comprar(producto, selectId) {
   let valor = select.value.split('-');
   let pais = valor[0];
   let precio = valor[1];
-
   let paisTexto = select.options[select.selectedIndex].text;
-  let metodoPago = metodos[pais];
+  let metodoPago = select.options[select.selectedIndex].getAttribute('data-pago');
 
-  let mensaje = `💗 *ANDREITAP SHOP* 💗\n\n🛒 *Pedido Nuevo*\n━━━━━━━━━━━\n📦 *Producto:* ${producto}\n💰 *Precio:* ${paisTexto}\n💳 *Pago:* ${metodoPago}\n━━━━━━━━━━━\n\n¿Me das los datos para pagar? ✨`;
+  let mensaje = `💗 *ANDREITAP SHOP* 💗\n\n🛒 *Pedido Nuevo*\n━━━━━━━━━━━\n📦 *Producto:* ${producto}\n💰 *Precio:* ${paisTexto}\n💳 *Método de Pago:* ${metodoPago}\n━━━━━━━━━━━\n\n¿Me das los datos para pagar? ✨`;
 
-  showToast(`Agregado: ${producto}`);
+  showToast(`Enviando pedido: ${producto}`);
 
   setTimeout(() => {
     let url = `https://wa.me/${tuNumero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
-  }, 800);
+  }, 600);
 }
 
 function showToast(texto) {
   const toast = document.getElementById('toast');
   toast.textContent = `💗 ${texto}`;
   toast.style.display = 'block';
-  setTimeout(() => {
-    toast.style.display = 'none';
-  }, 3000);
+  setTimeout(() => { toast.style.display = 'none'; }, 2500);
 }
 
 // Scroll suave
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
   });
 });
-
-// Crear corazones flotantes
-setInterval(() => {
-  const heart = document.createElement('div');
-  heart.innerHTML = '💗';
-  heart.style.position = 'fixed';
-  heart.style.left = Math.random() * 100 + '%';
-  heart.style.bottom = '0';
-  heart.style.fontSize = '20px';
-  heart.style.pointerEvents = 'none';
-  heart.style.animation = 'float 10s linear';
-  document.querySelector('.hearts').appendChild(heart);
-  setTimeout(() => heart.remove(), 10000);
-}, 3000);
