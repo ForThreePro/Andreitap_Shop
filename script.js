@@ -1,4 +1,4 @@
-const tuNumero = "573215829404"; // PON TU NUMERO DE WHATSAPP AQUI
+const tuNumero = "573215829404"; // CAMBIA AQUI TU NUMERO DE WHATSAPP
 
 function updatePago(select) {
   let pago = select.options[select.selectedIndex].getAttribute('data-pago');
@@ -14,7 +14,7 @@ function comprar(producto, selectId) {
   let paisTexto = select.options[select.selectedIndex].text;
   let metodoPago = select.options[select.selectedIndex].getAttribute('data-pago');
 
-  let mensaje = `💗 *ANDREITAP SHOP* 💗\n\n🛒 *Pedido Nuevo*\n━━━━━━━━━━━\n📦 *Producto:* ${producto}\n💰 *Precio:* ${paisTexto}\n💳 *Método de Pago:* ${metodoPago}\n━━━━━━━━━━━\n\n¿Me das los datos para pagar? ✨`;
+  let mensaje = `💗 *ANDREITAP VENTAS* 💗\n\n🛒 *Pedido Nuevo*\n━━━━━━━━━━━\n📦 *Producto:* ${producto}\n💰 *Precio:* ${paisTexto}\n💳 *Método de Pago:* ${metodoPago}\n━━━━━━━━━━━\n\n¿Me das los datos para pagar? ✨`;
 
   showToast(`Enviando pedido: ${producto}`);
 
