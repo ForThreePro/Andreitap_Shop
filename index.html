@@ -18,71 +18,43 @@
 
 <h1>✨ AndreitaP Ventas ✨</h1>
 
+<!-- SELECTOR DE PAIS -->
+<div class="selector-pais">
+    <label>Ver precios en: </label>
+    <select id="selectorPais" onchange="cambiarPais()">
+        <option value="mx">🇲🇽 México MXN</option>
+        <option value="co">🇨🇴 Colombia COP</option>
+        <option value="pe">🇵🇪 Perú PEN</option>
+        <option value="diam">💎 Diamantes</option>
+    </select>
+</div>
+
 <!-- SECCION 1: CALIGRAFICOS Y BOTS -->
 <div class="seccion">
     <div class="seccion-titulo">💌 SECCION 1: CALIGRÁFICOS Y BOTS 💌</div>
-    
-    <div class="subtitulo">CALIGRÁFICO SIMPLE</div>
-    <div class="item"><span>• 1</span> <span>$20 🇲🇽 - $5.500 🇨🇴 - $3.00 🇵🇪 - 100 💎</span></div>
-    <div class="item"><span>• 3</span> <span>$50 🇲🇽 - $13.500 🇨🇴 - $10.00 🇵🇪 - 300 💎</span></div>
-    <div class="item"><span>• 5</span> <span>$85 🇲🇽 - $18.500 🇨🇴 - $17.00 🇵🇪 - 400 💎</span></div>
-    
-    <div class="subtitulo">CALIGRÁFICO MÁS OBJETO</div>
-    <div class="item"><span>• 1</span> <span>$30 🇲🇽 - $7.500 🇨🇴 - $10.00 🇵🇪 - 200 💎</span></div>
-    <div class="item"><span>• 3</span> <span>$80 🇲🇽 - $16.500 🇨🇴 - $16.00 🇵🇪 - 400 💎</span></div>
-    <div class="item"><span>• 5</span> <span>$130 🇲🇽 - $26.500 🇨🇴 - $26.00 🇵🇪 - 700 💎</span></div>
-    
-    <div class="subtitulo">CALIGRÁFICO TEMÁTICO</div>
-    <div class="item"><span>• 1</span> <span>$40 🇲🇽 - $9.000 🇨🇴 - $8.00 🇵🇪 - 200 💎</span></div>
-    <div class="item"><span>• 3</span> <span>$100 🇲🇽 - $24.500 🇨🇴 - $20.00 🇵🇪 - 500 💎</span></div>
-    <div class="item"><span>• 5</span> <span>$170 🇲🇽 - $33.500 🇨🇴 - $34.00 🇵🇪 - 800 💎</span></div>
-    
-    <div class="subtitulo">BOTS MENSUALES</div>
-    <div class="item"><span>• 1</span> <span>$40 🇲🇽 - $8.500 🇨🇴 - $8.00 🇵🇪 - 200 💎</span></div>
-    <div class="item"><span>• 2</span> <span>$70 🇲🇽 - $14.500 🇨🇴 - $14.00 🇵🇪 - 500 💎</span></div>
-    <div class="item"><span>• 3</span> <span>$100 🇲🇽 - $25.000 🇨🇴 - $21.00 🇵🇪 - 700 💎</span></div>
-    
-    <div class="subtitulo">BOTS PERMANENTES</div>
-    <div class="item"><span>• 1</span> <span>$100 🇲🇽 - $25.000 🇨🇴 - $21.00 🇵🇪 - 600 💎</span></div>
-    <div class="item"><span>• 2</span> <span>$180 🇲🇽 - $34.500 🇨🇴 - $36.00 🇵🇪 - 1.000 💎</span></div>
-    <div class="item"><span>• 3</span> <span>$260 🇲🇽 - $49.500 🇨🇴 - $52.00 🇵🇪 - 2.000 💎</span></div>
-    <p style="text-align:center; margin-top:10px; font-style:italic;">Más grupos y más tiempo se cotiza</p>
+    <div id="productosCaligraficos"></div>
 </div>
 
 <!-- SECCION 2: STREAMING Y OTROS -->
 <div class="seccion">
     <div class="seccion-titulo">🎬 SECCION 2: STREAMING Y SUSCRIPCIONES 🎬</div>
-    
-    <div class="stream-grid" id="streamGrid">
-        <!-- Esto se llena con JS -->
-    </div>
+    <div class="stream-grid" id="streamGrid"></div>
     
     <div class="subtitulo" style="margin-top:20px;">📂 DOCUMENTOS</div>
-    <div class="item">Recetas médicas IMSS, Similares y Farmacias: $45</div>
-    <div class="item">Incapacidad IMSS: $45</div>
-    <div class="item">Certificados Primaria, Secundaria y Prepa: $45</div>
-    <div class="item">Actas Nacimiento, Matrimonio, Divorcio y Defunción: $25</div>
+    <div id="documentos"></div>
     
     <div class="subtitulo">💎 RECARGAS Y PAQUETES</div>
-    <div class="item">110 💎 x $15mx | 341 💎 x $50mx | 572 💎 x $70mx</div>
-    <div class="item">1166 💎 x $120mx | 2398 💎 x $225mx | 6160 💎 x $535mx</div>
-    <div class="item">Pase Booyah x Código: $40mx | 2 Pases: $65mx</div>
-    <div class="item">Pase Booyah x ID: $65mx | T/Semanal: $40mx | T/Mensual: $150mx</div>
-    <p style="text-align:center; margin-top:10px; font-size:0.85rem;">*_PRIMERO SE REVISA EL ID PARA VER SI CUENTA CON PROMOCIÓN_*</p>
+    <div id="recargas"></div>
 </div>
 
 <!-- SECCION 3: INFO Y PAGO -->
 <div class="seccion">
     <div class="seccion-titulo">☁️ SECCION 3: INFORMACIÓN ☁️</div>
-    
     <div style="text-align:center; font-size:1.2rem; margin:20px 0;">
         💗☁️ ¡Gracias por tu preferencia! ☁️💗
     </div>
-    
     <div class="subtitulo">METODOS DE PAGO</div>
-    <div class="metodos" id="metodosPago">
-        <!-- Esto se llena con JS -->
-    </div>
+    <div class="metodos" id="metodosPago"></div>
 </div>
 
 <button class="btn-wpp" onclick="contactarWPP()">📲 Pedir por WhatsApp</button>
