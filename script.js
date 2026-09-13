@@ -1,5 +1,5 @@
 let paisActual = 'mx'; // por defecto Mexico
-const numeroWPP = "51999999"; // CAMBIA TU NUMERO AQUI
+const numeroWPP = "573215829404"; // CAMBIA TU NUMERO AQUI
 
 // TODOS LOS PRODUCTOS CON PRECIOS
 const productos = [
